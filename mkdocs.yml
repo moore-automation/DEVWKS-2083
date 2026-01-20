@@ -1,11 +1,11 @@
 site_name: Cisco NSO Compliance Reporting Workshop
 site_description: Hands-on workshop for building network compliance automation using Cisco NSO
 site_author: Cisco Systems
-site_url: https://cisco.github.io/compliance-reporting-examples
+site_url: https://moore-automation.github.io/DEVWKS-2083
 
 # Repository information
-repo_name: compliance-reporting-examples
-repo_url: https://github.com/cisco/compliance-reporting-examples
+repo_name: DEVWKS-2083
+repo_url: https://github.com/moore-automation/DEVWKS-2083
 edit_uri: edit/main/docs/
 
 # Copyright
@@ -15,6 +15,7 @@ copyright: Copyright &copy; 2024-2026 Cisco Systems, Inc.
 theme:
   name: material
   language: en
+  logo: assets/logo.jpg
   palette:
     # Cisco branded colors - Light mode
     - scheme: default
@@ -53,7 +54,6 @@ theme:
   
   icon:
     repo: fontawesome/brands/github
-    logo: material/network
 
 # Custom CSS for Cisco branding
 extra_css:
@@ -63,14 +63,12 @@ extra_css:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/cisco
-      name: Cisco on GitHub
+      link: https://github.com/moore-automation
+      name: Moore Automation on GitHub
     - icon: fontawesome/solid/globe
       link: https://developer.cisco.com
       name: Cisco DevNet
   
-  version:
-    provider: mike
 
 # Extensions
 markdown_extensions:
@@ -119,9 +117,6 @@ plugins:
   - search:
       lang: en
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
-  - git-revision-date-localized:
-      enable_creation_date: true
-      type: timeago
 
 # Navigation structure
 nav:

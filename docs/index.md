@@ -112,7 +112,7 @@ Ready to begin? Start with the [Introduction](introduction/overview.md) to under
 !!! tip "Workshop Resources"
     - **Documentation**: Full NSO documentation at [developer.cisco.com](https://developer.cisco.com/docs/nso/)
     - **DevNet**: Join the community at [developer.cisco.com/devnet](https://developer.cisco.com)
-    - **GitHub**: Report issues or contribute at the [repository](https://github.com/cisco/compliance-reporting-examples)
+    - **GitHub**: Report issues or contribute at the [repository](https://github.com/moore-automation/DEVWKS-2083)
 
 ---
 

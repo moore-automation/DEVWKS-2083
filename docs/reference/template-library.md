@@ -53,7 +53,7 @@ login on-failure log
 login on-success log
 ```
 
-**Download:** [login-policy.xml](../../resources/devnet_sandbox/devwks_templates/login-policy.xml)
+**Download:** [login-policy.xml](https://github.com/moore-automation/DEVWKS-2083/raw/main/resources/devnet_sandbox/devwks_templates/login-policy.xml)
 
 ---
 
@@ -89,7 +89,7 @@ login on-success log
 enable secret 9 <encrypted-string>
 ```
 
-**Download:** [enable-secret.xml](../../resources/devnet_sandbox/devwks_templates/enable-secret.xml)
+**Download:** [enable-secret.xml](https://github.com/moore-automation/DEVWKS-2083/raw/main/resources/devnet_sandbox/devwks_templates/enable-secret.xml)
 
 ---
 
@@ -124,7 +124,7 @@ enable secret 9 <encrypted-string>
 # Enable password command must NOT exist
 ```
 
-**Download:** [no-enable-password.xml](../../resources/devnet_sandbox/devwks_templates/no-enable-password.xml)
+**Download:** [no-enable-password.xml](https://github.com/moore-automation/DEVWKS-2083/raw/main/resources/devnet_sandbox/devwks_templates/no-enable-password.xml)
 
 ---
 
@@ -157,7 +157,7 @@ enable secret 9 <encrypted-string>
 service password-encryption
 ```
 
-**Download:** [service_encrypt.xml](../../resources/compliance_templates/service_encrypt.xml)
+**Download:** [service_encrypt.xml](https://github.com/moore-automation/DEVWKS-2083/raw/main/resources/compliance_templates/service_encrypt.xml)
 
 ---
 
@@ -194,7 +194,7 @@ no ip http server
 no ip http secure-server
 ```
 
-**Download:** [no-http-server.xml](../../resources/devnet_sandbox/devwks_templates/no-http-server.xml)
+**Download:** [no-http-server.xml](https://github.com/moore-automation/DEVWKS-2083/raw/main/resources/devnet_sandbox/devwks_templates/no-http-server.xml)
 
 ---
 
@@ -230,7 +230,7 @@ no ip http secure-server
 # service udp-small-servers
 ```
 
-**Download:** [service_small_servers.xml](../../resources/compliance_templates/service_small_servers.xml)
+**Download:** [service_small_servers.xml](https://github.com/moore-automation/DEVWKS-2083/raw/main/resources/compliance_templates/service_small_servers.xml)
 
 ---
 
@@ -274,7 +274,7 @@ line aux 0
   transport output none
 ```
 
-**Download:** [line-aux.xml](../../resources/devnet_sandbox/devwks_templates/line-aux.xml)
+**Download:** [line-aux.xml](https://github.com/moore-automation/DEVWKS-2083/raw/main/resources/devnet_sandbox/devwks_templates/line-aux.xml)
 
 ---
 
@@ -322,7 +322,7 @@ interface Loopback0
   ip address 10.0.100.X 255.255.255.255
 ```
 
-**Download:** [loopback0.xml](../../resources/devnet_sandbox/devwks_templates/loopback0.xml)
+**Download:** [loopback0.xml](https://github.com/moore-automation/DEVWKS-2083/raw/main/resources/devnet_sandbox/devwks_templates/loopback0.xml)
 
 ---
 
@@ -367,7 +367,7 @@ router bgp 65001
   bgp router-id 10.0.100.X
 ```
 
-**Download:** [router-id.xml](../../resources/devnet_sandbox/devwks_templates/router-id.xml)
+**Download:** [router-id.xml](https://github.com/moore-automation/DEVWKS-2083/raw/main/resources/devnet_sandbox/devwks_templates/router-id.xml)
 
 ---
 
@@ -412,7 +412,7 @@ interface GigabitEthernet0/0
   no ip unreachables
 ```
 
-**Download:** [interface_unreachables.xml](../../resources/compliance_templates/interface_unreachables.xml)
+**Download:** [interface_unreachables.xml](https://github.com/moore-automation/DEVWKS-2083/raw/main/resources/compliance_templates/interface_unreachables.xml)
 
 ---
 
@@ -474,7 +474,7 @@ clock timezone EST -5 0
 - `$OFFSET_HOURS` - Hours offset from UTC
 - `$OFFSET_MINUTES` - Minutes offset
 
-**Download:** [timezone.xml](../../resources/compliance_templates/timezone.xml)
+**Download:** [timezone.xml](https://github.com/moore-automation/DEVWKS-2083/raw/main/resources/compliance_templates/timezone.xml)
 
 ---
 
@@ -523,7 +523,7 @@ line console 0
 **Variables Required:**
 - `$AUTH_NAME` - Authentication method name
 
-**Download:** [line_console_strict.xml](../../resources/compliance_templates/line_console_strict.xml)
+**Download:** [line_console_strict.xml](https://github.com/moore-automation/DEVWKS-2083/raw/main/resources/compliance_templates/line_console_strict.xml)
 
 ---
 
@@ -579,7 +579,7 @@ ip access-list extended PROTECT-IN
 **Variables Required:**
 - `$IPV4_PROTECT` - ACL name to check
 
-**Download:** [acl_deny_options.xml](../../resources/compliance_templates/acl_deny_options.xml)
+**Download:** [acl_deny_options.xml](https://github.com/moore-automation/DEVWKS-2083/raw/main/resources/compliance_templates/acl_deny_options.xml)
 
 ---
 
@@ -614,7 +614,7 @@ ip access-list extended PROTECT-IN
 no mpls ip propagate-ttl
 ```
 
-**Download:** [disable_propagate_ttl.xml](../../resources/compliance_templates/disable_propagate_ttl.xml)
+**Download:** [disable_propagate_ttl.xml](https://github.com/moore-automation/DEVWKS-2083/raw/main/resources/compliance_templates/disable_propagate_ttl.xml)
 
 ---
 

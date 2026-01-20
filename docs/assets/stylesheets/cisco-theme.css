@@ -4,7 +4,7 @@
 :root {
   --cisco-blue: #049fd9;
   --cisco-dark-blue: #00bceb;
-  --cisco-navy: #0d274d;
+  --cisco-navy: #0B172B;
   --cisco-light-blue: #6cc04a;
 }
 
@@ -26,7 +26,7 @@
 
 /* Header styling */
 .md-header {
-  background-color: var(--cisco-blue);
+  background-color: var(--cisco-navy);
 }
 
 /* Navigation tabs */

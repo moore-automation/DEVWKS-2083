@@ -58,8 +58,8 @@ The match pattern category determines the scope of a given configuration match. 
 
 ```bash
 # Clone the repository
-git clone https://github.com/cisco/compliance-reporting-examples.git
-cd compliance-reporting-examples
+git clone https://github.com/moore-automation/DEVWKS-2083.git
+cd DEVWKS-2083
 
 # Install dependencies
 make install
@@ -74,8 +74,8 @@ make serve
 
 ```bash
 # Clone the repository
-git clone https://github.com/cisco/compliance-reporting-examples.git
-cd compliance-reporting-examples
+git clone https://github.com/moore-automation/DEVWKS-2083.git
+cd DEVWKS-2083
 
 # Create virtual environment
 python3 -m venv venv
@@ -122,15 +122,6 @@ mkdocs serve
 6. **Remediation** - Fix non-compliant configurations
 7. **Advanced Topics** *(Optional)* - Compliance services and continuous monitoring
 
-## Contributing
-
-We welcome contributions! Please see [CONTRIBUTING.md](docs/CONTRIBUTING.md) for guidelines.
-
-## Community
-
-- [Code of Conduct](docs/CODE_OF_CONDUCT.md)
-- [Security Policy](docs/SECURITY.md)
-
 ## License
 
 This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
@@ -139,7 +130,7 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 
 For questions or issues:
 
-- Open an [issue](https://github.com/cisco/compliance-reporting-examples/issues)
+- Open an [issue](https://github.com/moore-automation/DEVWKS-2083/issues)
 - Visit [Cisco DevNet](https://developer.cisco.com)
 - Email: usps-nso-support@cisco.com
 
@@ -153,4 +144,4 @@ For questions or issues:
 
 **Ready to begin?**
 
-Start with the [Introduction](https://cisco.github.io/compliance-reporting-examples/introduction/overview/) or jump to the [Lab Setup](https://cisco.github.io/compliance-reporting-examples/lab-guide/setup/) if you're already familiar with the concepts.
+Start with the [Introduction](https://moore-automation.github.io/DEVWKS-2083/introduction/overview/) or jump to the [Lab Setup](https://moore-automation.github.io/DEVWKS-2083/lab-guide/setup/) if you're already familiar with the concepts.

@@ -1,0 +1,59 @@
+module web-secure {
+
+  namespace "http://example.com/web-secure";
+  prefix web-secure;
+
+  import ietf-inet-types {
+    prefix inet;
+  }
+  import tailf-common {
+    prefix tailf;
+  }
+  import tailf-ncs {
+    prefix ncs;
+  }
+
+  description
+    "Dyamic ACL service for securing web access.";
+
+  revision 2025-06-08 {
+    description
+      "Release 1.0";
+  }
+
+  list web-secure {
+    description "This is an RFS skeleton service";
+
+    key name;
+    leaf name {
+      tailf:info "ACL name";
+      type string;
+    }
+
+    uses ncs:service-data;
+    ncs:servicepoint web-secure-servicepoint;
+
+    leaf-list permitted-web-servers {
+      tailf:info "List of permitted web servers";
+      type inet:ipv4-address;
+    }
+    
+    list devices {
+      key name;
+      leaf name {
+        type leafref {
+          path "/ncs:devices/ncs:device/ncs:name";
+        }
+      }
+      leaf interface-type {
+        type enumeration {
+          enum "GigabitEthernet";
+          enum "TenGigabitEthernet";
+        }
+      }
+      leaf interface-id {
+        type uint8;
+      }
+    }
+  }
+}

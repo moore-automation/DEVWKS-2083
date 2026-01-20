@@ -1,0 +1,62 @@
+<config-template xmlns="http://tail-f.com/ns/config/1.0">
+  <devices xmlns="http://tail-f.com/ns/ncs">
+    <device>
+      <name>{$device}</name>
+      <config>
+        <ip xmlns="urn:ios">
+          <access-list>
+            <extended>
+              <ext-named-acl>
+                <name>{/name}</name>
+                <ext-access-list-rule>
+                  <rule>remark allow list populated by Cisco NSO</rule>
+                </ext-access-list-rule>
+                <ext-access-list-rule foreach="{/permitted-web-servers}">
+                  <rule>permit tcp any host {current()} eq 80</rule>
+                </ext-access-list-rule>
+                <ext-access-list-rule foreach="{/permitted-web-servers}">
+                  <rule>permit tcp any host {current()} eq 443</rule>
+                </ext-access-list-rule>
+                <ext-access-list-rule>
+                  <rule>remark deny all other web traffic</rule>
+                </ext-access-list-rule>
+                <ext-access-list-rule>
+                  <rule>deny tcp any any eq 80</rule>
+                </ext-access-list-rule>
+                <ext-access-list-rule>
+                  <rule>deny tcp any any eq 443</rule>
+                </ext-access-list-rule>
+                <ext-access-list-rule>
+                  <rule>remark allow all other traffic</rule>
+                </ext-access-list-rule>
+                <ext-access-list-rule>
+                  <rule>permit ip any any</rule>
+                </ext-access-list-rule>
+              </ext-named-acl>
+            </extended>
+          </access-list>
+        </ip>
+        <interface xmlns="urn:ios">
+          <GigabitEthernet when="{$interface-type='GigabitEthernet'}">
+            <name>{$interface-id}</name>
+            <ip>
+              <access-group>
+                <direction>out</direction>
+                <access-list>{/name}</access-list>
+              </access-group>
+            </ip>
+          </GigabitEthernet>
+          <TenGigabitEthernet when="{$interface-type='TenGigabitEthernet'}">
+            <name>{$interface-id}</name>
+            <ip>
+              <access-group>
+                <direction>out</direction>
+                <access-list>{/name}</access-list>
+              </access-group>
+            </ip>
+          </TenGigabitEthernet>
+        </interface>
+      </config>
+    </device>
+  </devices>
+</config-template>

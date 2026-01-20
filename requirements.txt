@@ -1,0 +1,12 @@
+# MkDocs and Material Theme
+mkdocs>=1.5.0
+mkdocs-material>=9.5.0
+
+# Extensions for enhanced documentation
+pymdown-extensions>=10.7.0
+
+# Plugins
+mkdocs-git-revision-date-localized-plugin>=1.2.0
+
+# Additional utilities
+markdown>=3.5.0

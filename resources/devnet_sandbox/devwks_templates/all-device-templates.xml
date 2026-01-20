@@ -1,0 +1,110 @@
+<devices xmlns="http://tail-f.com/ns/ncs">
+  <template>
+      <name>NO-HTTP</name>
+      <ned-id>
+      <id xmlns:cisco-ios-cli-6.109="http://tail-f.com/ns/ned-id/cisco-ios-cli-6.109">cisco-ios-cli-6.109:cisco-ios-cli-6.109</id>
+      <config>
+          <ip xmlns="urn:ios">
+          <http>
+              <server>false</server>
+              <secure-server>false</secure-server>
+          </http>
+          </ip>
+      </config>
+      </ned-id>
+  </template>
+    <template>
+        <name>LOGIN-POLICY</name>
+        <ned-id>
+        <id xmlns:cisco-ios-cli-6.109="http://tail-f.com/ns/ned-id/cisco-ios-cli-6.109">cisco-ios-cli-6.109:cisco-ios-cli-6.109</id>
+        <config>
+            <login xmlns="urn:ios">
+            <on-failure>
+                <log/>
+            </on-failure>
+            <on-success>
+                <log/>
+            </on-success>
+            </login>
+        </config>
+        </ned-id>
+    </template>
+    <template>
+        <name>LOOPBACK0</name>
+        <ned-id>
+        <id xmlns:cisco-ios-cli-6.109="http://tail-f.com/ns/ned-id/cisco-ios-cli-6.109">cisco-ios-cli-6.109:cisco-ios-cli-6.109</id>
+        <config>
+            <interface xmlns="urn:ios">
+            <Loopback>
+                <name>0</name>
+                <ip>
+                <address>
+                    <primary>
+                    <address>{$LOOPBACK0_IP}</address>
+                    <mask>255.255.255.255</mask>
+                    </primary>
+                </address>
+                </ip>
+            </Loopback>
+            </interface>
+        </config>
+        </ned-id>
+    </template>
+    <template>
+        <name>ROUTER-ID</name>
+        <ned-id>
+        <id xmlns:cisco-ios-cli-6.109="http://tail-f.com/ns/ned-id/cisco-ios-cli-6.109">cisco-ios-cli-6.109:cisco-ios-cli-6.109</id>
+        <config>
+            <router xmlns="urn:ios">
+            <ospf>
+                <id>1</id>
+                <router-id>{$LOOPBACK0_IP}</router-id>
+            </ospf>
+            </router>
+        </config>
+        </ned-id>
+    </template>
+    <template>
+        <name>NO-AUX</name>
+        <ned-id>
+        <id xmlns:cisco-ios-cli-6.109="http://tail-f.com/ns/ned-id/cisco-ios-cli-6.109">cisco-ios-cli-6.109:cisco-ios-cli-6.109</id>
+        <config>
+            <line xmlns="urn:ios">
+            <aux>
+                <first>0</first>
+                <transport>
+                <output>none</output>
+                </transport>
+            </aux>
+            </line>
+        </config>
+        </ned-id>
+    </template>
+    <template>
+      <name>ENABLE-SECRET</name>
+      <ned-id>
+        <id xmlns:cisco-ios-cli-6.109="http://tail-f.com/ns/ned-id/cisco-ios-cli-6.109">cisco-ios-cli-6.109:cisco-ios-cli-6.109</id>
+        <config>
+          <enable xmlns="urn:ios">
+            <secret>
+              <type>0</type>
+              <secret>cisco123</secret>
+            </secret>
+          </enable>
+        </config>
+      </ned-id>
+    </template>
+    <template>
+      <name>NO-ENABLE-PASSWORD</name>
+      <ned-id>
+        <id xmlns:cisco-ios-cli-6.109="http://tail-f.com/ns/ned-id/cisco-ios-cli-6.109">cisco-ios-cli-6.109:cisco-ios-cli-6.109</id>
+        <config>
+          <enable xmlns="urn:ios">
+            <password tags=" delete ">
+              <secret>cisco</secret>
+            </password>
+          </enable>
+        </config>
+      </ned-id>
+    </template>
+</devices>

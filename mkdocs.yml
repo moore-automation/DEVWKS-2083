@@ -1,0 +1,141 @@
+site_name: Cisco NSO Compliance Reporting Workshop
+site_description: Hands-on workshop for building network compliance automation using Cisco NSO
+site_author: Cisco Systems
+site_url: https://cisco.github.io/compliance-reporting-examples
+
+# Repository information
+repo_name: compliance-reporting-examples
+repo_url: https://github.com/cisco/compliance-reporting-examples
+edit_uri: edit/main/docs/
+
+# Copyright
+copyright: Copyright &copy; 2024-2026 Cisco Systems, Inc.
+
+# Theme configuration
+theme:
+  name: material
+  language: en
+  palette:
+    # Cisco branded colors - Light mode
+    - scheme: default
+      primary: custom
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - scheme: slate
+      primary: custom
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
+  font:
+    text: Roboto
+    code: Roboto Mono
+  
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+  
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/network
+
+# Custom CSS for Cisco branding
+extra_css:
+  - assets/stylesheets/cisco-theme.css
+
+# Additional configuration
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/cisco
+      name: Cisco on GitHub
+    - icon: fontawesome/solid/globe
+      link: https://developer.cisco.com
+      name: Cisco DevNet
+  
+  version:
+    provider: mike
+
+# Extensions
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 3
+  
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Plugins
+plugins:
+  - search:
+      lang: en
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+
+# Navigation structure
+nav:
+  - Home: index.md
+  - Introduction:
+      - Overview: introduction/overview.md
+      - Compliance Patterns: introduction/compliance-patterns.md
+  - Lab Guide:
+      - Setup: lab-guide/setup.md
+      - Getting Started: lab-guide/getting-started.md
+      - Building Compliance Templates: lab-guide/compliance-templates.md
+      - Generating Compliance Reports: lab-guide/compliance-reports.md
+      - Remediation: lab-guide/remediation.md
+      - Advanced Topics: lab-guide/advanced.md
+  - Reference:
+      - Template Examples: reference/template-examples.md
+      - Template Library: reference/template-library.md

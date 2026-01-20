@@ -1,0 +1,23 @@
+<compliance xmlns="http://tail-f.com/ns/ncs">
+    <template>
+      <name>LOOPBACK0</name>
+      <ned-id>
+        <id xmlns:cisco-ios-cli-6.109="http://tail-f.com/ns/ned-id/cisco-ios-cli-6.109">cisco-ios-cli-6.109:cisco-ios-cli-6.109</id>
+        <config>
+            <interface xmlns="urn:ios">
+              <Loopback>
+                <name>0</name>
+                <ip>
+                  <address>
+                    <primary>
+                      <address>10.0.100.+</address>
+                      <mask>255.255.255.255</mask>
+                    </primary>
+                  </address>
+                </ip>
+              </Loopback>
+            </interface>
+        </config>
+      </ned-id>
+    </template>
+  </compliance>

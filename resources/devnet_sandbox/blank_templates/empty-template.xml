@@ -1,0 +1,13 @@
+<compliance xmlns="http://tail-f.com/ns/ncs">
+    <template>
+        <name><!-- TEMPLATE-NAME --></name>
+        <ned-id>
+        <id xmlns:cisco-ios-cli-6.109="http://tail-f.com/ns/ned-id/cisco-ios-cli-6.109">cisco-ios-cli-6.109:cisco-ios-cli-6.109</id>
+        <config>
+
+            <!-- Place XML device configuration here -->
+
+        </config>
+        </ned-id>
+    </template>
+</compliance>

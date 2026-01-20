@@ -1,0 +1,87 @@
+hostname dev-core-rtr01
+logging console disable
+service timestamps log datetime msec
+service timestamps debug datetime msec
+domain name virl.info
+domain lookup disable
+username admin
+ group root-lr
+ group cisco-support
+ password 7 104D000A061843595F
+!
+username cisco
+ group root-lr
+ group cisco-support
+ password 7 045802150C2E
+!
+vrf Mgmt-intf
+ address-family ipv4 unicast
+ !
+ address-family ipv6 unicast
+ !
+!
+line template vty
+ timestamp
+ exec-timeout 720 0
+!
+line console
+ exec-timeout 0 0
+ absolute-timeout 0
+ session-timeout 0
+!
+line default
+ exec-timeout 0 0
+ absolute-timeout 0
+ session-timeout 0
+!
+vty-pool default 0 50
+call-home
+ service active
+ contact smart-licensing
+ profile CiscoTAC-1
+  active
+  destination transport-method http
+ !
+!
+control-plane
+ management-plane
+  inband
+   interface all
+    allow all
+   !
+  !
+ !
+!
+interface Loopback0
+!
+interface MgmtEth0/RP0/CPU0/0
+ description to port5.sandbox-backend
+ vrf Mgmt-intf
+ ipv4 address 10.10.20.174 255.255.255.0
+!
+interface GigabitEthernet0/0/0/0
+ description L3 Link to dev-edge-sw01
+ ipv4 address 172.16.253.1 255.255.255.248
+!
+interface GigabitEthernet0/0/0/1
+ description L3 Link to dev-dist-rtr01
+ ipv4 address 172.17.252.22 255.255.255.252
+!
+router static
+ vrf Mgmt-intf
+  address-family ipv4 unicast
+   0.0.0.0/0 10.10.20.254
+  !
+ !
+!
+router ospf 1
+ area 0
+  interface GigabitEthernet0/0/0/1
+  !       
+ !
+!
+ssh server v2
+ssh server vrf Mgmt-intf
+telnet vrf default ipv4 server max-servers 10
+telnet vrf Mgmt-intf ipv4 server max-servers 10
+end

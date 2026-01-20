@@ -1,0 +1,22 @@
+<compliance xmlns="http://tail-f.com/ns/ncs">
+    <template>
+        <name>NO-AUX</name>
+        <ned-id>
+        <id xmlns:cisco-ios-cli-6.109="http://tail-f.com/ns/ned-id/cisco-ios-cli-6.109">cisco-ios-cli-6.109:cisco-ios-cli-6.109</id>
+        <config>
+                <line xmlns="urn:ios">
+                    <aux tags=" strict ">
+                        <first>0</first>
+                        <exec-choice>
+                            <exec>false</exec>
+                        </exec-choice>
+                        <transport>
+                            <input tags=" absent ">.+</input>
+                            <output>none</output>
+                        </transport>
+                    </aux>
+                </line>
+        </config>
+        </ned-id>
+    </template>
+</compliance>

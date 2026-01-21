@@ -2,7 +2,7 @@
 
 <div class="img-placeholder">
 📸 Image Placeholder: Cisco Live Workshop Banner
-<br><small>Suggested size: 1200x300px - Add hero image showcasing NSO compliance automation</small>
+<br><small><img src="assets/images/banner.png"></small>
 </div>
 
 ## Welcome to the Workshop!

@@ -1,11 +1,17 @@
-# Cisco NSO Compliance Reporting Workshop
+# DEVWKS-2083 - The Journey of Automating Network Compliance using Cisco NSO
 
 <div class="img-placeholder">
-📸 Image Placeholder: Cisco Live Workshop Banner
 <br><small><img src="assets/images/banner.png"></small>
 </div>
 
 ## Welcome to the Workshop!
+
+### 1st task Create the Compliance Template
+
+Navigate to configuration Editor -> ncs:devices
+
+<br><small><img src="assets/images/001.png"></small>
+
 
 **⏱️ Total workshop time: ~45 minutes**
 

@@ -8,10 +8,31 @@
 
 ### 1st task Create the Compliance Template
 
-Navigate to configuration Editor -> ncs:devices
+- Be Sure VPN Connectivity is ON.
+
+- Open the Browser and navigate to NSO IP
+http://10.10.20.47:8080/
+
+username : admin
+password : admin
+
+Navigate to Tools -> Compliance Reports
 
 <br><small><img src="assets/images/001.png"></small>
 
+The List should be empty. Let's create our first Compliance Report.
+
+Click on the "+ New report" button ( right side ).
+
+<br><small><img src="assets/images/002.png"></small>
+
+Give the compliance report name, in this case "test_loopback" and hit the "Create" button
+
+<br><small><img src="assets/images/003.png"></small>
+
+Click on "Devices" tab
+
+<br><small><img src="assets/images/004.png"></small>
 
 **⏱️ Total workshop time: ~45 minutes**
 

@@ -6,8 +6,6 @@
 
 ## Welcome to the Workshop!
 
-### 1st task Create the Compliance Template
-
 - Be Sure VPN Connectivity is ON.
 
 - Open the Browser and navigate to NSO IP
@@ -15,6 +13,130 @@ http://10.10.20.47:8080/
 
 username : admin
 password : admin
+
+## 1 - Devices in-sync
+
+Ensure devices are in sync with NSO
+
+Go to the devices list
+
+<small><img src="assets/images/1_001.png"></small>
+
+select all
+
+<small><img src="assets/images/1_002.png"></small>
+
+do a sync from
+
+<small><img src="assets/images/1_003.png"></small>
+
+all devices are now in sync, click "Done"
+
+### 2 - Create the Compliance Template
+
+To Create our first Compliance Report
+
+Go to the Configuration Editor
+
+<small><img src="assets/images/3_001.png"></small>
+
+Select ncs:compliance
+
+<small><img src="assets/images/3_002.png"></small>
+
+Click on "Edit Config" button on Top and then click on the "+" Button to Create your first Compliance Template
+
+<small><img src="assets/images/3_003.png"></small>
+
+Add a new item called "vtp_ntp_check"
+
+<small><img src="assets/images/4_001.png"></small>
+
+You can notice the greenbar's on the left, this means the configuration is seen as candidate. If it was a device configuration, it would only be pushed after we click on the Commit button.
+
+Click on "vtp_dns_check" template that you just created and then hit the "+" button.
+
+<small><img src="assets/images/4_002.png"></small>
+
+NED - Network Element Driver, creates de Device Abstraction Layer in NSO. Translating the User intent to the device specific language.
+
+You now need to select the device types you're targetting with the compliance check.
+
+In this case we've 4 available.
+ASA
+IOS
+IOSXR
+NX
+
+Select "cisco-iosxr-cli-7.65" and hit "confirm"
+
+<small><img src="assets/images/4_003.png"></small>
+
+Now, we will define what will be checked for IOS-XR devices.
+
+Click on the ned name "cisco-iosxr-cli-7.65:cisco-iosxr-cli-7.65" and then "config"
+
+We're now in the root of the NED ( device ). 
+The goal is to select what configurations we will audit.
+Let's grab a simple use case.
+VTP mode OFF and NTP Server & Peer configured.
+
+Navigate to the vtp path and write "off" in mode.
+
+/ncs:compliance/template{vtp_ntp_check}/ned-id{cisco-iosxr-cli-7.65:cisco-iosxr-cli-7.65}/config/cisco-ios-xr:vtp/
+
+<small><img src="assets/images/4_004.png"></small>
+
+Now, go back, by hitting the "arrow up" button
+
+<small><img src="assets/images/4_005.png"></small>
+
+And now, let's go to the NTP configuration path.
+
+After config, write "ntp" and hit enter.
+
+Fill some of the elements, like Max Associations.
+
+<small><img src="assets/images/4_006.png"></small>
+
+Peer Address
+
+<small><img src="assets/images/4_007.png"></small>
+
+and Server Address.
+
+<small><img src="assets/images/4_008.png"></small>
+
+click on the server IP ( 2.2.2.2 )
+
+<small><img src="assets/images/4_009.png"></small>
+
+select a value for minpool ( 8 ) and maxpool ( 12 )
+
+<small><img src="assets/images/4_10.png"></small>
+
+Now that we did finish our Compliance Template, let's go to "Commit Manager" to overview the changes.
+
+Click on the top right launchpad icon
+
+<small><img src="assets/images/4_11.png"></small>
+
+and then, click on the "config" tab.
+
+<small><img src="assets/images/4_12.png"></small>
+
+We can see, in green, what is the config we are checking.
+
+Click, on the commit button ( on the right ) and then , on the popup, click under "Yes, commit" Button
+
+<small><img src="assets/images/4_13.png"></small>
+
+We're now ready to create and run our Compliance Report.
+
+Note : If we wish to make checks on other types of devices we just need to repeat the same process, by adding a different type of NED.
+
+
+### 2 - Create the Compliance Report ( Auditing )
 
 Navigate to Tools -> Compliance Reports
 
@@ -26,122 +148,188 @@ Click on the "+ New report" button ( right side ).
 
 <br><small><img src="assets/images/002.png"></small>
 
-Give the compliance report name, in this case "test_loopback" and hit the "Create" button
+Give the compliance report name, in this case "vtp_ntp_report" and hit the "Create" button
 
-<br><small><img src="assets/images/003.png"></small>
+<small><img src="assets/images/4_14.png"></small>
 
-Click on "Devices" tab
+Click on "Devices" tab and select "All devices"
 
-<br><small><img src="assets/images/004.png"></small>
+<small><img src="assets/images/4_15.png"></small>
 
-**⏱️ Total workshop time: ~45 minutes**
+Scroll Down, to the Compliances Report. Click on "Add Template" Button
 
-Welcome to the Cisco NSO Network Compliance Reporting Workshop! This hands-on lab explores how to leverage Cisco Network Services Orchestrator (NSO) to automate network compliance auditing using compliance templates.
+<small><img src="assets/images/4_16.png"></small>
 
-Compliance templates were first introduced in NSO 6.1, and this workshop demonstrates the ongoing enhancements to compliance reporting using NSO 6.4+. You'll learn how to translate policy requirements into automated compliance checks, generate comprehensive reports, and remediate non-compliant configurations.
+Select the "vtp_ntp_check" Template we've created.
 
----
+<small><img src="assets/images/4_17.png"></small>
 
-## What You'll Learn
+Scroll Up and hit the "Create Report" button. Your page should look like this.
 
-Throughout this workshop, you will:
+<small><img src="assets/images/4_18.png"></small>
 
-- :material-check-circle: **Understand compliance patterns** - Learn the different types of compliance checks and when to use each approach
-- :material-file-document-outline: **Build compliance templates** - Create NSO compliance templates from policy requirements
-- :material-chart-bar: **Generate compliance reports** - Run automated compliance audits across your network infrastructure
-- :material-tools: **Remediate findings** - Use NSO to fix non-compliant configurations
-- :material-rocket-launch: **Advanced automation** - Explore compliance services for continuous monitoring
+Your Report is ready to run. Click on "Run Report" button.
 
----
+<small><img src="assets/images/4_19.png"></small>
 
-## Workshop Prerequisites
+Give a name like "vtp_ntp_run" - This will allow you to identify the report execution when you run a report multiple times.
 
-Before starting this lab, you should have:
+Click on "Run Report" button.
 
-!!! info "Required Knowledge"
-    - Basic understanding of network configuration (Cisco IOS/IOS-XE)
-    - Familiarity with CLI operations
-    - Basic XML/YAML concepts (helpful but not required)
+<small><img src="assets/images/4_20.png"></small>
 
-!!! warning "Lab Requirements"
-    - Access to DevNet Sandbox or NSO instance
-    - SSH client
-    - Web browser
-    - Internet connection
+Once it finishes, a pop-up shuld show up on the top right of your page. Click on "Report results" hyperlink.
 
----
+<small><img src="assets/images/4_21.png"></small>
 
-## Workshop Structure
+If you miss the popup time, use the left menu option "Tools" -> "Report results"
 
-This workshop is organized into the following sections:
+Your window should show up like this.
 
-### :material-book-open-variant: Introduction
+We can notice we've some violations.
 
-Learn about NSO compliance reporting fundamentals and the different patterns for compliance checks.
+Click on the report execution name "vtp_ntp_run" to see the details.
 
-[Start with Introduction →](introduction/overview.md){ .md-button .md-button--primary }
+<small><img src="assets/images/4_22.png"></small>
 
-### :material-flask: Lab Guide
+Looking at the result, we can see our network of 9 devices is 78% compliant. 
 
-Follow the hands-on exercises to build compliance templates, generate reports, and remediate configurations.
+Only 2 devices are not compliant.
 
-[Jump to Lab Guide →](lab-guide/setup.md){ .md-button }
+<small><img src="assets/images/4_23.png"></small>
 
-### :material-library: Reference
+By clicking on "View details" next to "Not Compliant" device. We can see what configurations are missing in the device, to make it not compliant.
 
-Access the complete template library and examples for your own compliance automation projects.
+<small><img src="assets/images/4_24.png"></small>
 
-[Browse Reference →](reference/template-examples.md){ .md-button }
+Now, there are 2 ways to Remediate.
 
----
+1 - If we're testing the Compliance Report agaisnt an NSO Service, we can just click on "Re-Deploy" action button and the Devices will be automatically compliant.
 
-## Lab Objectives
+2 - Since we're testing the Compliance Report agaisnt a Compliance Template, we will create a Device Template and Apply to the Devices.
 
-By the end of this workshop, you will have completed:
+There is always a third option, which is, inserting the configurations in the device manually, but, we were going the automation path. In this use case, might be just some couple of lines, but following a true compliance check might result in multiple different types of missing configurations across devices.
 
-1. **Getting Connected** - Access your NSO sandbox environment
-2. **NSO Basics** - Navigate the NSO GUI and CLI interfaces
-3. **Build Templates** - Create 8+ compliance templates covering different patterns
-4. **Generate Reports** - Run comprehensive compliance audits
-5. **Remediation** - Fix non-compliant configurations using device templates
-6. **Advanced Topics** *(Optional)* - Build compliance services for continuous monitoring
+### 3 - Create a Device Template ( Remediation )
 
----
+Now we will follow a similar procedure regarding compliance templates.
 
-## About This Workshop
+Double-click on "Config Editor" located on the left menu. 
 
-This workshop repository contains:
+Select the "ncs:devices" module
 
-- **Compliance Templates** - Pre-built templates for common security and operational policies
-- **Device Templates** - Remediation templates to fix common compliance issues
-- **NSO Service Package** - Example compliance service for continuous monitoring
-- **Lab Exercises** - Step-by-step instructions with CLI and GUI examples
+<small><img src="assets/images/4_25.png"></small>
 
----
+Click on Edit-Config
 
-## Getting Started
+<small><img src="assets/images/4_26.png"></small>
 
-Ready to begin? Start with the [Introduction](introduction/overview.md) to understand the fundamentals of NSO compliance reporting, or jump directly to the [Lab Setup](lab-guide/setup.md) if you're already familiar with the concepts.
+on Template, click on "plus" button.
 
-<div style="text-align: center; margin-top: 2em;">
-  <a href="introduction/overview.md" class="md-button md-button--primary" style="margin: 0.5em;">
-    📚 Learn the Fundamentals
-  </a>
-  <a href="lab-guide/setup.md" class="md-button" style="margin: 0.5em;">
-    🚀 Start the Lab
-  </a>
-</div>
+<small><img src="assets/images/4_28.png"></small>
 
----
+Add a new list item named "vtp_ntp_remediation" and hit "confirm"
 
-## Need Help?
+<small><img src="assets/images/4_27.png"></small>
 
-!!! tip "Workshop Resources"
-    - **Documentation**: Full NSO documentation at [developer.cisco.com](https://developer.cisco.com/docs/nso/)
-    - **DevNet**: Join the community at [developer.cisco.com/devnet](https://developer.cisco.com)
-    - **GitHub**: Report issues or contribute at the [repository](https://github.com/moore-automation/DEVWKS-2083)
+Click on it
 
----
+<small><img src="assets/images/4_29.png"></small>
+
+Select the IOS-XR NED-ID and hit "confirm"
+
+<small><img src="assets/images/4_30.png"></small>
+
+Click on the ned-id "cisco-iosxr-cli-7.65:cisco-iosxr-cli-7.65" to create the remediation configurations.
+
+<small><img src="assets/images/4_31.png"></small>
+
+First, the VTP
+
+<small><img src="assets/images/4_32.png"></small>
+
+Then, NTP "max-associations" ( 10 ) and "peer" "address" ( 1.1.1.1 )
+
+<small><img src="assets/images/4_33.png"></small>
+
+To finish, "server address" ( 2.2.2.2 )
+
+<small><img src="assets/images/4_34.png"></small>
+
+Defining the minpool ( 8 ) and maxpool ( 12 ) values, inside the server address.
+
+<small><img src="assets/images/4_35.png"></small>
+
+After finishing our remediation template. We will click on our launchpad ( top right ) to commit the changes.
+
+<small><img src="assets/images/4_36.png"></small>
+
+We can confirm the changes and hit "Commit" and then "Yes, commit"
+
+<small><img src="assets/images/4_37.png"></small>
+
+### 4 - Apply the Remediation Template
+
+To apply the template, we go to "Devices" menu. 
+Select the devices we want to apply the template.
+Then, "Choose actions" and then "Apply template"
+
+<small><img src="assets/images/4_38.png"></small>
+
+We select the template and hit "Apply"
+
+<small><img src="assets/images/4_39.png"></small>
+
+We should see "result ok" message. Then hit, "Done"
+
+<small><img src="assets/images/4_40.png"></small>
+
+Taking a look at our launchpad ( top right ). We see that we now have 14 changes pending.
+
+<small><img src="assets/images/4_41.png"></small>
+
+We can see that NSO will automatically apply the changes from the template to the devices.
+
+NSO is smart and will only apply the needed changes, for example, if one device already had "max-associations" configured, NSO would skip that lines from the template for that device.
+
+<small><img src="assets/images/4_42.png"></small>
+
+We now, click on "Commit" and then "Yes, commit". You should see the message, "Commit finished...roolback id..."
+
+This another great advantage of NSO. every change can be reverted, easily.
+
+<small><img src="assets/images/4_43.png"></small>
+
+### 5 - Re-run the Report
+
+Go to "Tools" -> "Compliance reports"
+Click on the "..." on the right of the screen ( report line )
+
+<small><img src="assets/images/4_44.png"></small>
+
+Click on "Run Report"
+
+<small><img src="assets/images/4_45.png"></small>
+
+Give it a name, like "ntp_run_2" and hit "Run report"
+
+<small><img src="assets/images/4_46.png"></small>
+
+Let's see the "Report Results"
+
+<small><img src="assets/images/4_47.png"></small>
+
+You can see that we're now with "No violation", which by other words mean "Compliant"
+
+<small><img src="assets/images/4_48.png"></small>
+
+Opening the Report we can see that we're full compliant.
+
+<small><img src="assets/images/4_49.png"></small>
+
+There is as well the option to export the reports to PDF formats so they can be leveraged for internal usage.
+
+Thank you so much !
 
 <div style="text-align: center; color: #888; font-size: 0.9em; margin-top: 3em;">
   Built with ❤️ by Cisco CX Automation Team | Cisco Live 2026

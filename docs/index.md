@@ -48,15 +48,15 @@ Click on "Edit Config" button on Top and then click on the "+" Button to Create 
 
 <small><img src="assets/images/3_003.png"></small>
 
-Add a new item called "vtp_ntp_check"
+Add a new item called "ntp_check"
 
-<small><img src="assets/images/4_001.png"></small>
+<small><img src="assets/images/4_60.png"></small>
 
 You can notice the greenbar's on the left, this means the configuration is seen as candidate. If it was a device configuration, it would only be pushed after we click on the Commit button.
 
-Click on "vtp_dns_check" template that you just created and then hit the "+" button.
+Click on "ntp_check" template that you just created and then hit the "+" button.
 
-<small><img src="assets/images/4_002.png"></small>
+<small><img src="assets/images/4_61.png"></small>
 
 NED - Network Element Driver, creates de Device Abstraction Layer in NSO. Translating the User intent to the device specific language.
 
@@ -70,7 +70,7 @@ NX
 
 Select "cisco-iosxr-cli-7.65" and hit "confirm"
 
-<small><img src="assets/images/4_003.png"></small>
+<small><img src="assets/images/4_62.png"></small>
 
 Now, we will define what will be checked for IOS-XR devices.
 
@@ -79,51 +79,29 @@ Click on the ned name "cisco-iosxr-cli-7.65:cisco-iosxr-cli-7.65" and then "conf
 We're now in the root of the NED ( device ). 
 The goal is to select what configurations we will audit.
 Let's grab a simple use case.
-VTP mode OFF and NTP Server & Peer configured.
+NTP Peer and Max-Associations configured.
 
-Navigate to the vtp path and write "off" in mode.
+Navigate to the ntp path.
 
-/ncs:compliance/template{vtp_ntp_check}/ned-id{cisco-iosxr-cli-7.65:cisco-iosxr-cli-7.65}/config/cisco-ios-xr:vtp/
-
-<small><img src="assets/images/4_004.png"></small>
-
-Now, go back, by hitting the "arrow up" button
-
-<small><img src="assets/images/4_005.png"></small>
-
-And now, let's go to the NTP configuration path.
-
-After config, write "ntp" and hit enter.
+/ncs:compliance/template{ntp_check}/ned-id{cisco-iosxr-cli-7.65:cisco-iosxr-cli-7.65}/config/cisco-ios-xr:ntp/
 
 Fill some of the elements, like Max Associations.
 
-<small><img src="assets/images/4_006.png"></small>
+<small><img src="assets/images/4_63.png"></small>
 
-Peer Address
+and then Peer Address
 
 <small><img src="assets/images/4_007.png"></small>
-
-and Server Address.
-
-<small><img src="assets/images/4_008.png"></small>
-
-click on the server IP ( 2.2.2.2 )
-
-<small><img src="assets/images/4_009.png"></small>
-
-select a value for minpool ( 8 ) and maxpool ( 12 )
-
-<small><img src="assets/images/4_10.png"></small>
 
 Now that we did finish our Compliance Template, let's go to "Commit Manager" to overview the changes.
 
 Click on the top right launchpad icon
 
-<small><img src="assets/images/4_11.png"></small>
+<small><img src="assets/images/4_64.png"></small>
 
 and then, click on the "config" tab.
 
-<small><img src="assets/images/4_12.png"></small>
+<small><img src="assets/images/4_65.png"></small>
 
 We can see, in green, what is the config we are checking.
 
@@ -148,39 +126,39 @@ Click on the "+ New report" button ( right side ).
 
 <br><small><img src="assets/images/002.png"></small>
 
-Give the compliance report name, in this case "vtp_ntp_report" and hit the "Create" button
+Give the compliance report name, in this case "ntp_report" and hit the "Create" button
 
-<small><img src="assets/images/4_14.png"></small>
+<small><img src="assets/images/4_66.png"></small>
 
 Click on "Devices" tab and select "All devices"
 
-<small><img src="assets/images/4_15.png"></small>
+<small><img src="assets/images/4_67.png"></small>
 
 Scroll Down, to the Compliances Report. Click on "Add Template" Button
 
 <small><img src="assets/images/4_16.png"></small>
 
-Select the "vtp_ntp_check" Template we've created.
+Select the "ntp_check" Template we've created.
 
-<small><img src="assets/images/4_17.png"></small>
+<small><img src="assets/images/4_68.png"></small>
 
 Scroll Up and hit the "Create Report" button. Your page should look like this.
 
-<small><img src="assets/images/4_18.png"></small>
+<small><img src="assets/images/4_69.png"></small>
 
 Your Report is ready to run. Click on "Run Report" button.
 
 <small><img src="assets/images/4_19.png"></small>
 
-Give a name like "vtp_ntp_run" - This will allow you to identify the report execution when you run a report multiple times.
+Give a name like "ntp_run" - This will allow you to identify the report execution when you run a report multiple times.
 
 Click on "Run Report" button.
 
-<small><img src="assets/images/4_20.png"></small>
+<small><img src="assets/images/4_70.png"></small>
 
 Once it finishes, a pop-up shuld show up on the top right of your page. Click on "Report results" hyperlink.
 
-<small><img src="assets/images/4_21.png"></small>
+<small><img src="assets/images/4_71.png"></small>
 
 If you miss the popup time, use the left menu option "Tools" -> "Report results"
 
@@ -188,19 +166,19 @@ Your window should show up like this.
 
 We can notice we've some violations.
 
-Click on the report execution name "vtp_ntp_run" to see the details.
+Click on the report execution name "ntp_run" to see the details.
 
-<small><img src="assets/images/4_22.png"></small>
+<small><img src="assets/images/4_72.png"></small>
 
 Looking at the result, we can see our network of 9 devices is 78% compliant. 
 
 Only 2 devices are not compliant.
 
-<small><img src="assets/images/4_23.png"></small>
+<small><img src="assets/images/4_74.png"></small>
 
 By clicking on "View details" next to "Not Compliant" device. We can see what configurations are missing in the device, to make it not compliant.
 
-<small><img src="assets/images/4_24.png"></small>
+<small><img src="assets/images/4_75.png"></small>
 
 Now, there are 2 ways to Remediate.
 

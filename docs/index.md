@@ -4,163 +4,151 @@
 <br><small><img src="assets/images/banner.png"></small>
 </div>
 
-## Welcome to the Workshop!
+### 🚀 Welcome to the Workshop!
 
-- Be Sure VPN Connectivity is ON.
+Welcome to your hands-on workshop on automating network compliance with Cisco NSO.
+You’ll learn how to create, audit, and remediate compliance across your network devices—empowering you to maintain a secure and consistent environment.
+___
 
-- Open the Browser and navigate to NSO IP
-http://10.10.20.47:8080/
+##### 🛠️ Getting Started
 
-username : admin
-password : admin
+###### Before you begin:
 
-## 1 - Devices in-sync
+<b>VPN:</b> Ensure your Cisco VPN connection is active.
+<b>Web UI:</b> http://10.10.20.47:8080/
 
-Ensure devices are in sync with NSO
+###### Credentials:
 
-Go to the devices list
+| username        | password           | 
+| ------------- |:-------------:| 
+| admin      | admin | 
 
-<small><img src="assets/images/1_001.png"></small>
 
-select all
+### 1 - Devices in-sync
 
-<small><img src="assets/images/1_002.png"></small>
+>Before performing an audit, NSO must have the latest configuration from the network (the "Source of Truth").
 
-do a sync from
+###### Steps:
 
-<small><img src="assets/images/1_003.png"></small>
+Navigate to the <b>Devices</b> list in the main menu
 
-all devices are now in sync, click "Done"
+<small><img src="assets/images/_001.png"></small>
 
-### 2 - Create the Compliance Template
+<b>Select all</b> devices.
 
-To Create our first Compliance Report
+<small><img src="assets/images/_002.png"></small>
 
-Go to the Configuration Editor
+Click the <b>Choose actions</b> dropdown and select <b>Sync From</b>. This pulls the device configurations into the NSO CDB (Configuration Database).
 
-<small><img src="assets/images/3_001.png"></small>
+<small><img src="assets/images/_003.png"></small>
 
-Select ncs:compliance
+Once the sync is complete, click <b>Done</b>.
 
-<small><img src="assets/images/3_002.png"></small>
+### 2 - Creating a Compliance Template
 
-Click on "Edit Config" button on Top and then click on the "+" Button to Create your first Compliance Template
+>A Compliance Template defines the intended state of your network.
 
-<small><img src="assets/images/3_003.png"></small>
+Open the <b>Configuration Editor</b>.
 
-Add a new item called "ntp_check"
+<small><img src="assets/images/_004.png"></small>
 
-<small><img src="assets/images/4_60.png"></small>
+Select the <b>ncs:compliance</b> module.
 
-You can notice the greenbar's on the left, this means the configuration is seen as candidate. If it was a device configuration, it would only be pushed after we click on the Commit button.
+<small><img src="assets/images/_005.png"></small>
 
-Click on "ntp_check" template that you just created and then hit the "+" button.
+Click <b>Edit Config</b> (top bar), then click the <b>+ (Plus)</b> button.
 
-<small><img src="assets/images/4_61.png"></small>
+<small><img src="assets/images/_006.png"></small>
 
-NED - Network Element Driver, creates de Device Abstraction Layer in NSO. Translating the User intent to the device specific language.
+Name the template: ntp_check.
 
-You now need to select the device types you're targetting with the compliance check.
+<small><img src="assets/images/_007.png"></small>
 
-In this case we've 4 available.
-ASA
-IOS
-IOSXR
-NX
+><b>Candidate Config:</b> Green bars indicate changes are staged as a "candidate" configuration. They are not active until you click <b>Commit</b>.
 
-Select "cisco-iosxr-cli-7.65" and hit "confirm"
+Click on the ntp_check template and click the + button.
 
-<small><img src="assets/images/4_62.png"></small>
+<small><img src="assets/images/_008.png"></small>
 
-Now, we will define what will be checked for IOS-XR devices.
+><b>NED (Network Element Driver)</b>: creates de Device Abstraction Layer in NSO. Translating the User intent to the device specific language. (e.g., ASA, IOS, IOSXR, NX, ... ).
 
-Click on the ned name "cisco-iosxr-cli-7.65:cisco-iosxr-cli-7.65" and then "config"
+Select the NED: cisco-iosxr-cli-7.65 and click <b>Confirm</b>.
 
-We're now in the root of the NED ( device ). 
-The goal is to select what configurations we will audit.
-Let's grab a simple use case.
-NTP Peer and Max-Associations configured.
+<small><img src="assets/images/_009.png"></small>
 
-Navigate to the ntp path.
+Navigate to the NTP path: ncs:compliance/template{ntp_check}/ned-id{cisco-iosxr-cli-7.65}/config/cisco-ios-xr:ntp/
 
-/ncs:compliance/template{ntp_check}/ned-id{cisco-iosxr-cli-7.65:cisco-iosxr-cli-7.65}/config/cisco-ios-xr:ntp/
+Configure the following:
+<b>Max Associations:</b> 10
 
-Fill some of the elements, like Max Associations.
+<small><img src="assets/images/_010.png"></small>
 
-<small><img src="assets/images/4_63.png"></small>
+<b>Peer Address:</b> 1.1.1.1
 
-and then Peer Address
+<small><img src="assets/images/4_90.png"></small>
 
-<small><img src="assets/images/4_007.png"></small>
+<b>Commit Changes:</b> Click the <b>Launchpad</b> icon (top right) 
 
-Now that we did finish our Compliance Template, let's go to "Commit Manager" to overview the changes.
 
-Click on the top right launchpad icon
+<small><img src="assets/images/_011.png"></small>
 
-<small><img src="assets/images/4_64.png"></small>
+<b>Config</b> tab 
 
-and then, click on the "config" tab.
-
-<small><img src="assets/images/4_65.png"></small>
+<small><img src="assets/images/_012.png"></small>
 
 We can see, in green, what is the config we are checking.
 
-Click, on the commit button ( on the right ) and then , on the popup, click under "Yes, commit" Button
+<b>Commit</b> -> <b>Yes, commit</b>.
 
-<small><img src="assets/images/4_13.png"></small>
+<small><img src="assets/images/4_91.png"></small>
 
-We're now ready to create and run our Compliance Report.
-
-Note : If we wish to make checks on other types of devices we just need to repeat the same process, by adding a different type of NED.
-
+>Note : If we wish to make checks on other types of devices we just need to repeat the same process, by adding a different type of NED.
 
 ### 2 - Create the Compliance Report ( Auditing )
 
-Navigate to Tools -> Compliance Reports
+>Now we check the actual network state against our ntp_check template.
 
-<br><small><img src="assets/images/001.png"></small>
+Go to <b>Tools</b> -> <b>Compliance Reports</b>.
 
-The List should be empty. Let's create our first Compliance Report.
+<small><img src="assets/images/_013.png"></small>
 
-Click on the "+ New report" button ( right side ).
+Click <b>+ New report</b>
 
-<br><small><img src="assets/images/002.png"></small>
+<small><img src="assets/images/_014.png"></small>
 
-Give the compliance report name, in this case "ntp_report" and hit the "Create" button
+name it ntp_report, and click <b>Create</b>.
 
-<small><img src="assets/images/4_66.png"></small>
+<small><img src="assets/images/_015.png"></small>
 
-Click on "Devices" tab and select "All devices"
+In the <b>Devices</b> tab, select <b>All devices</b>.
 
-<small><img src="assets/images/4_67.png"></small>
+<small><img src="assets/images/_016.png"></small>
 
-Scroll Down, to the Compliances Report. Click on "Add Template" Button
+Scroll to <b>Compliances</b>, click <b>Add Template</b>
 
-<small><img src="assets/images/4_16.png"></small>
+<small><img src="assets/images/_017.png"></small>
 
 Select the "ntp_check" Template we've created.
 
-<small><img src="assets/images/4_68.png"></small>
+<small><img src="assets/images/_018.png"></small>
 
-Scroll Up and hit the "Create Report" button. Your page should look like this.
+Scroll Up and hit the <b>"Create Report"</b> button. Your page should look like this.
 
-<small><img src="assets/images/4_69.png"></small>
+<small><img src="assets/images/_019.png"></small>
 
-Your Report is ready to run. Click on "Run Report" button.
+Your Report is ready to run. Click on <b>"Save Report"</b> button.
 
-<small><img src="assets/images/4_19.png"></small>
+<small><img src="assets/images/_020.png"></small>
 
-Give a name like "ntp_run" - This will allow you to identify the report execution when you run a report multiple times.
+Name the run ntp_run and click <b>Run report</b>.
 
-Click on "Run Report" button.
+<small><img src="assets/images/_021.png"></small>
 
-<small><img src="assets/images/4_70.png"></small>
+Click on <b>"Run Report"</b> button.
 
-Once it finishes, a pop-up shuld show up on the top right of your page. Click on "Report results" hyperlink.
+Click the <b>Report</b> results link in the pop-up or find it under <b>Tools -> Report results</b>.
 
-<small><img src="assets/images/4_71.png"></small>
-
-If you miss the popup time, use the left menu option "Tools" -> "Report results"
+<small><img src="assets/images/_022.png"></small>
 
 Your window should show up like this.
 
@@ -168,144 +156,128 @@ We can notice we've some violations.
 
 Click on the report execution name "ntp_run" to see the details.
 
-<small><img src="assets/images/4_72.png"></small>
+<small><img src="assets/images/_023.png"></small>
 
 Looking at the result, we can see our network of 9 devices is 78% compliant. 
 
 Only 2 devices are not compliant.
 
-<small><img src="assets/images/4_74.png"></small>
+<small><img src="assets/images/_024.png"></small>
 
-By clicking on "View details" next to "Not Compliant" device. We can see what configurations are missing in the device, to make it not compliant.
+Click <b>View details</b> on a "Not Compliant" device to see exactly what configuration is missing.
 
-<small><img src="assets/images/4_75.png"></small>
+<small><img src="assets/images/_026.png"></small>
 
-Now, there are 2 ways to Remediate.
-
-1 - If we're testing the Compliance Report agaisnt an NSO Service, we can just click on "Re-Deploy" action button and the Devices will be automatically compliant.
-
-2 - Since we're testing the Compliance Report agaisnt a Compliance Template, we will create a Device Template and Apply to the Devices.
-
-There is always a third option, which is, inserting the configurations in the device manually, but, we were going the automation path. In this use case, might be just some couple of lines, but following a true compliance check might result in multiple different types of missing configurations across devices.
+>Now, there are 2 ways to Remediate.
+>
+>1 - If we're testing the Compliance Report agaisnt an NSO Service, we can just click on "Re-Deploy" action button and the Devices will be automatically compliant.
+>
+>2 - Since we're testing the Compliance Report agaisnt a Compliance Template, we will create a Device Template and Apply to the Devices.
+>
+>There is always a third option, which is, inserting the configurations in the device manually, but, we were going the automation path. In this use case, might be just some couple of lines, but following a true compliance check might result in multiple different types of missing configurations across devices.
 
 ### 3 - Create a Device Template ( Remediation )
 
-Now we will follow a similar procedure regarding compliance templates.
+To fix it, we create a Device Template.
 
-Double-click on "Config Editor" located on the left menu. 
+Double-click on <b>"Config Editor"</b> located on the left menu. 
 
-Select the "ncs:devices" module
+Select the <b>"ncs:devices"</b> module
 
-<small><img src="assets/images/4_25.png"></small>
+<small><img src="assets/images/_025.png"></small>
 
-Click on Edit-Config
+Click <b>Edit-Config</b>
 
-<small><img src="assets/images/4_26.png"></small>
+<small><img src="assets/images/4_76.png"></small>
 
-on Template, click on "plus" button.
+<b>Template</b> -> <b>+ (Plus)</b>.
 
-<small><img src="assets/images/4_28.png"></small>
+<small><img src="assets/images/_027.png"></small>
 
-Add a new list item named "vtp_ntp_remediation" and hit "confirm"
+Name it ntp_remediation and click <b>Confirm</b>.
 
-<small><img src="assets/images/4_27.png"></small>
+<small><img src="assets/images/4_77.png"></small>
 
 Click on it
 
-<small><img src="assets/images/4_29.png"></small>
+<small><img src="assets/images/4_78.png"></small>
 
-Select the IOS-XR NED-ID and hit "confirm"
+Select the cisco-iosxr-cli-7.65 NED.
 
-<small><img src="assets/images/4_30.png"></small>
+<small><img src="assets/images/_028.png"></small>
 
-Click on the ned-id "cisco-iosxr-cli-7.65:cisco-iosxr-cli-7.65" to create the remediation configurations.
+Click on the ned-id "cisco-iosxr-cli-7.65:cisco-iosxr-cli-7.65" to create the remediation configurations. Then "config".
 
-<small><img src="assets/images/4_31.png"></small>
+<small><img src="assets/images/_029.png"></small>
 
-First, the VTP
+Set the NTP values: <b>Max-associations</b> (10) and <b>Peer Address</b> (1.1.1.1).
 
-<small><img src="assets/images/4_32.png"></small>
+<small><img src="assets/images/4_79.png"></small>
 
-Then, NTP "max-associations" ( 10 ) and "peer" "address" ( 1.1.1.1 )
+After finishing our remediation template. We will click on our <b>launchpad ( top right )</b> to commit the changes.
 
-<small><img src="assets/images/4_33.png"></small>
+<small><img src="assets/images/4_80.png"></small>
 
-To finish, "server address" ( 2.2.2.2 )
+We can confirm the changes and hit <b>"Commit"</b> and then "Yes, commit"
 
-<small><img src="assets/images/4_34.png"></small>
-
-Defining the minpool ( 8 ) and maxpool ( 12 ) values, inside the server address.
-
-<small><img src="assets/images/4_35.png"></small>
-
-After finishing our remediation template. We will click on our launchpad ( top right ) to commit the changes.
-
-<small><img src="assets/images/4_36.png"></small>
-
-We can confirm the changes and hit "Commit" and then "Yes, commit"
-
-<small><img src="assets/images/4_37.png"></small>
+<small><img src="assets/images/4_81.png"></small>
 
 ### 4 - Apply the Remediation Template
 
-To apply the template, we go to "Devices" menu. 
+To apply the template, we go to <b>"Devices"</b> menu. 
 Select the devices we want to apply the template.
-Then, "Choose actions" and then "Apply template"
+Then, <b>"Choose actions"</b> and then <b>"Apply template"</b>
 
-<small><img src="assets/images/4_38.png"></small>
+<small><img src="assets/images/_030.png"></small>
 
-We select the template and hit "Apply"
+We select the template and hit <b>"Apply"</b>
 
-<small><img src="assets/images/4_39.png"></small>
+<small><img src="assets/images/4_82.png"></small>
 
-We should see "result ok" message. Then hit, "Done"
+We should see "result ok" message. Then hit, <b>"Done"</b>
 
-<small><img src="assets/images/4_40.png"></small>
+<small><img src="assets/images/_031.png"></small>
 
-Taking a look at our launchpad ( top right ). We see that we now have 14 changes pending.
+Taking a look at our <b>launchpad</b> ( top right ). We see that we now have 14 changes pending.
 
-<small><img src="assets/images/4_41.png"></small>
+<small><img src="assets/images/4_83.png"></small>
 
 We can see that NSO will automatically apply the changes from the template to the devices.
 
-NSO is smart and will only apply the needed changes, for example, if one device already had "max-associations" configured, NSO would skip that lines from the template for that device.
+>NSO is smart and will only apply the needed changes, for example, if one device already had "max-associations" configured, NSO would skip that lines from the template for that device.
 
-<small><img src="assets/images/4_42.png"></small>
+<small><img src="assets/images/4_84.png"></small>
 
-We now, click on "Commit" and then "Yes, commit". You should see the message, "Commit finished...roolback id..."
+We now, click on <b>"Commit"</b> and then <b>"Yes, commit"</b>. You should see the message, "Commit finished...roolback id..."
 
 This another great advantage of NSO. every change can be reverted, easily.
 
-<small><img src="assets/images/4_43.png"></small>
+<small><img src="assets/images/_032.png"></small>
 
 ### 5 - Re-run the Report
 
-Go to "Tools" -> "Compliance reports"
-Click on the "..." on the right of the screen ( report line )
+Go to <b>"Tools"</b> -> <b>"Compliance reports"</b>
+Click on the "..." on the right of the screen ( report line ) and then "Run"
 
-<small><img src="assets/images/4_44.png"></small>
+<small><img src="assets/images/4_85.png"></small>
 
-Click on "Run Report"
+Give it a name, like "ntp_run_2" and hit <b>"Run report"</b>
 
-<small><img src="assets/images/4_45.png"></small>
-
-Give it a name, like "ntp_run_2" and hit "Run report"
-
-<small><img src="assets/images/4_46.png"></small>
+<small><img src="assets/images/4_86.png"></small>
 
 Let's see the "Report Results"
 
-<small><img src="assets/images/4_47.png"></small>
+<small><img src="assets/images/4_87.png"></small>
 
-You can see that we're now with "No violation", which by other words mean "Compliant"
+You can see that we're now with <b>"No violation"</b>, which by other words mean "Compliant"
 
-<small><img src="assets/images/4_48.png"></small>
+<small><img src="assets/images/4_88.png"></small>
 
-Opening the Report we can see that we're full compliant.
+Opening the Report we can see that we're <b>full compliant</b>.
 
-<small><img src="assets/images/4_49.png"></small>
+<small><img src="assets/images/4_89.png"></small>
 
-There is as well the option to export the reports to PDF formats so they can be leveraged for internal usage.
+>There is as well the option to export the reports to <b>PDF</b> (top) formats so they can be leveraged for internal usage.
 
 Thank you so much !
 

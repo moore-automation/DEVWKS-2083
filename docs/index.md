@@ -76,6 +76,8 @@ Select the NED: cisco-iosxr-cli-7.65 and click <b>Confirm</b>.
 
 <small><img src="assets/images/_009.png"></small>
 
+By clicking on <b>config</b> and then <b>ntp</b>
+
 Navigate to the NTP path: ncs:compliance/template{ntp_check}/ned-id{cisco-iosxr-cli-7.65}/config/cisco-ios-xr:ntp/
 
 Configure the following:
@@ -104,7 +106,7 @@ We can see, in green, what is the config we are checking.
 
 >Note : If we wish to make checks on other types of devices we just need to repeat the same process, by adding a different type of NED.
 
-### 2 - Create the Compliance Report ( Auditing )
+### 3 - Create the Compliance Report ( Auditing )
 
 >Now we check the actual network state against our ntp_check template.
 
@@ -176,7 +178,7 @@ Click <b>View details</b> on a "Not Compliant" device to see exactly what config
 >
 >There is always a third option, which is, inserting the configurations in the device manually, but, we were going the automation path. In this use case, might be just some couple of lines, but following a true compliance check might result in multiple different types of missing configurations across devices.
 
-### 3 - Create a Device Template ( Remediation )
+### 4 - Create a Device Template ( Remediation )
 
 To fix it, we create a Device Template.
 
@@ -222,7 +224,7 @@ We can confirm the changes and hit <b>"Commit"</b> and then "Yes, commit"
 
 <small><img src="assets/images/4_81.png"></small>
 
-### 4 - Apply the Remediation Template
+### 5 - Apply the Remediation Template
 
 To apply the template, we go to <b>"Devices"</b> menu. 
 Select the devices we want to apply the template.
@@ -254,7 +256,7 @@ This another great advantage of NSO. every change can be reverted, easily.
 
 <small><img src="assets/images/_032.png"></small>
 
-### 5 - Re-run the Report
+### 6 - Re-run the Report
 
 Go to <b>"Tools"</b> -> <b>"Compliance reports"</b>
 Click on the "..." on the right of the screen ( report line ) and then "Run"

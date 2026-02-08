@@ -121,9 +121,9 @@ plugins:
 # Navigation structure
 nav:
   - Getting Started: 
-      - Credentials: getting_started/index.md
-      - VPN Connectivity: getting_started/connectivity.md
-      - Lab Guide: getting_started/lab.md
+      - Credentials: index.md
+      - VPN Connectivity: connectivity.md
+      - Lab Guide: lab.md
   - Workshop Guide:
       - Devices in-sync: workshop_guide/1.md
       - Creating a Compliance Template: workshop_guide/2.md

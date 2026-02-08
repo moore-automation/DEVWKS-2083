@@ -1,6 +1,6 @@
 # DEVWKS-2083 - The Journey of Automating Network Compliance using Cisco NSO
 
-<br><small><img src="../../assets/images/banner.png"></small>
+<br><small><img src="assets/images/banner.png"></small>
 
 ### 🚀 Welcome to the Workshop!
 

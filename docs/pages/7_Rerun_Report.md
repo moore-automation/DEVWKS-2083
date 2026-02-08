@@ -21,6 +21,6 @@ Opening the Report we can see that we're <b>full compliant</b>.
 
 <small><img src="../../assets/images/4_89.png"></small>
 
->There is as well the option to export the reports to <b>PDF</b> (top) formats so they can be leveraged for internal usage.
+> There is as well the option to export the reports to <b>PDF</b> (top) formats so they can be leveraged for internal usage.
 
 Thank you so much !

@@ -50,7 +50,7 @@ Enter an address like <b>1.2.3.4</b> and hit <b>confirm</b>
 
 <small><img src="../../assets/images/5_15.png"></small>
 
-Your page should look like this. You an notice the number 3 near the <b>launchpad</b> ( top right ). click on it.
+Your page should look like this. You can notice the number 3 near the <b>launchpad</b> ( top right ). click on it.
 
 <small><img src="../../assets/images/5_16.png"></small>
 
@@ -62,4 +62,4 @@ Hit Commit and then <b>Yes, commit</b>
 
 <small><img src="../../assets/images/5_18.png"></small>
 
->In case you've selected more devices, the same configuration will be sent to them as well in the same transaction.
+> In case you've selected more devices, the same configuration will be sent to them as well in the same transaction.

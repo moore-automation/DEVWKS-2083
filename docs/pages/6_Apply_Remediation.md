@@ -20,11 +20,11 @@ Taking a look at our <b>launchpad</b> ( top right ). We see that we now have 6 c
 
 We can see that NSO will automatically apply the changes from the template to the devices.
 
->NSO is smart and will only apply the needed changes, for example, if one device already had "max-associations" configured, NSO would skip that lines from the template for that device.
+> NSO is smart and will only apply the needed changes, for example, if one device already had "max-associations" configured, NSO would skip that lines from the template for that device.
 
 <small><img src="../../assets/images/4_84.png"></small>
 
-We now, click on <b>"Commit"</b> and then <b>"Yes, commit"</b>. You should see the message, "Commit finished...roolback id..."
+We now, click on <b>"Commit"</b> and then <b>"Yes, commit"</b>. You should see the message, "Commit finished...rollback id..."
 
 This another great advantage of NSO. every change can be reverted, easily.
 

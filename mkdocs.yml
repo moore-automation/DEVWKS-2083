@@ -14,6 +14,7 @@ copyright: Copyright &copy; 2024-2026 Cisco Systems, Inc.
 # Theme configuration
 theme:
   name: material
+  custom_dir: docs/overrides
   language: en
   logo: assets/logo.jpg
   palette:
@@ -50,6 +51,7 @@ theme:
     - search.share
     - content.code.copy
     - content.code.annotate
+    - content.code.select
     - content.tabs.link
   
   icon:
@@ -57,7 +59,7 @@ theme:
 
 # Custom CSS for Cisco branding
 extra_css:
-  - assets/stylesheets/cisco-theme.css
+  - stylesheets/extra.css
 
 # Additional configuration
 extra:
@@ -68,7 +70,6 @@ extra:
     - icon: fontawesome/solid/globe
       link: https://developer.cisco.com
       name: Cisco DevNet
-  
 
 # Extensions
 markdown_extensions:
@@ -117,22 +118,22 @@ plugins:
   - search:
       lang: en
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+  - macros:
+      module_name: login_macro
 
 # Navigation structure
 nav:
-  - Getting Started: 
-      - Credentials: index.md
-      - VPN Connectivity: connectivity.md
-      - Lab Guide: lab.md
+  - Home: index.md
   - Workshop Guide:
-      - Devices in-sync: workshop_guide/1.md
-      - Creating a Compliance Template: workshop_guide/2.md
-      - Create the Compliance Report ( Auditing ): workshop_guide/3.md
-      - Create a Device Template ( Remediation ): workshop_guide/4.md
-      - Apply the Remediation Template: workshop_guide/5.md
-      - Re-run the Report: workshop_guide/6.md
+    - VPN Connectivity: pages/1_Connectivity.md
+    - Devices in-sync: pages/2_Devices_in_Sync.md
+    - Creating a Compliance Template: pages/3_Compliance_Template.md
+    - Create the Compliance Report: pages/4_Compliance_Report.md
+    - Create a Device Template: pages/5_Device_Template.md
+    - Apply the Remediation Template: pages/6_Apply_Remediation.md
+    - Re-run the Report: pages/7_Rerun_Report.md
   - Extra Credit:
-      - Deploy the Service: extra_credit/deploy.md
-      - Create the Compliance Report: extra_credit/c_report.md
-      - Make changes in the Device: extra_credit/changes_device.md
-      - Re-run the Report and Remediate: extra_credit/remediate.md
+    - Deploy the Service: pages/8_Deploy_Service.md
+    - Create the Compliance Report: pages/9_Service_Compliance.md
+    - Make changes in the Device: pages/10_Device_Changes.md
+    - Re-run the Report and Remediate: pages/11_Remediate.md

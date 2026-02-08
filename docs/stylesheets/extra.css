@@ -80,6 +80,10 @@
   border-left-color: var(--cisco-light-blue);
 }
 
+/* Sidebar hiding is handled per-page via template override (overrides/main.html) */
+
+/* Workshop-specific classes */
+
 /* Custom workshop progress indicators */
 .workshop-progress {
   display: inline-block;
@@ -110,6 +114,43 @@
   border-radius: 12px;
   font-size: 0.85em;
   font-weight: 500;
+}
+
+/* Raised card for inline concept blocks */
+.md-typeset .card {
+  background: var(--md-code-bg-color);
+  border-left: 3px solid var(--cisco-blue);
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .card {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Instruction card variant — green accent with arrow icon */
+.md-typeset .instruction {
+  background: var(--md-code-bg-color);
+  border-left: 3px solid var(--cisco-light-blue);
+  border-radius: 6px;
+  padding: 0.8rem 1rem 0.8rem 2.4rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  position: relative;
+}
+
+.md-typeset .instruction::before {
+  content: "\279C";
+  position: absolute;
+  left: 0.75rem;
+  top: 0.78rem;
+  color: var(--cisco-light-blue);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .instruction {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Image placeholders */

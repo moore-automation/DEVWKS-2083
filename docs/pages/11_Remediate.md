@@ -1,4 +1,3 @@
-
 This task demonstrates how easily non-compliant reports can be remediated using services. We will now re-run the report, observe the failure, and remediate by re-deploying the service.
 
 Go to <b>Tools</b> -> <b>Compliance reporting</b> and click on <b>...</b> (right side) to Re-Run the report. ( Hit <b>Run</b> )
@@ -21,14 +20,14 @@ Clicking on <b>view details</b> you will be able to see what is missing for the 
 
 <small><img src="../../assets/images/5_36.png"></small>
 
->The difference against compliance / device templates comes now, the remediation on services in much faster and simpler.
-Comes with a cost, limitation on compliance capabilities, being only able to test if configuration is like defined in the service.
+> The difference against compliance / device templates comes now, the remediation on services is much faster and simpler.
+> Comes with a cost, limitation on compliance capabilities, being only able to test if configuration is like defined in the service.
 
 To Remediate, navigate to <b>Services</b> ( left side ), open the service instance <b>router_service</b> then, click on <b>Choose action</b> and then <b>Re-deploy</b>
 
 <small><img src="../../assets/images/5_37.png"></small>
 
->This action will automatically push to the devices the changes missing in order the service to be in-sync
+> This action will automatically push to the devices the changes missing in order the service to be in-sync
 
 Click <b>Done</b>
 
@@ -56,5 +55,5 @@ In the search, you type "nso" and then choose <b>Network Services Orchestrator 6
 
 
 <div style="text-align: center; color: #888; font-size: 0.9em; margin-top: 3em;">
-  Built with ❤️ by Cisco CX Automation Team | Cisco Live 2026
+  Built with love by Cisco CX Automation Team | Cisco Live 2026
 </div>

@@ -60,10 +60,10 @@ Click <b>View details</b> on a "Not Compliant" device to see exactly what config
 
 <small><img src="../../assets/images/_026.png"></small>
 
->Now, there are 2 ways to Remediate.
+> Now, there are 2 ways to Remediate.
 >
->1 - If we're testing the Compliance Report agaisnt an NSO Service, we can just click on "Re-Deploy" action button and the Devices will be automatically compliant.
+> 1 - If we're testing the Compliance Report against an NSO Service, we can just click on "Re-Deploy" action button and the Devices will be automatically compliant.
 >
->2 - Since we're testing the Compliance Report agaisnt a Compliance Template, we will create a Device Template and Apply to the Devices.
+> 2 - Since we're testing the Compliance Report against a Compliance Template, we will create a Device Template and Apply to the Devices.
 >
->There is always a third option, which is, inserting the configurations in the device manually, but, we were going the automation path. In this use case, might be just some couple of lines, but following a true compliance check might result in multiple different types of missing configurations across devices.
+> There is always a third option, which is, inserting the configurations in the device manually, but, we were going the automation path. In this use case, might be just some couple of lines, but following a true compliance check might result in multiple different types of missing configurations across devices.

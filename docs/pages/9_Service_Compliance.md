@@ -32,7 +32,7 @@ Report results
 
 <small><img src="../../assets/images/5_24.png"></small>
 
-We can see our Report is compliant, due to no changes in the device after the service aplication. 
+We can see our Report is compliant, due to no changes in the device after the service application. 
 
 <small><img src="../../assets/images/5_25.png"></small>
 

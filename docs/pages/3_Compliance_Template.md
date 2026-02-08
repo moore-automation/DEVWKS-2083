@@ -16,13 +16,13 @@ Name the template: ntp_check.
 
 <small><img src="../../assets/images/_007.png"></small>
 
-><b>Candidate Config:</b> Green bars indicate changes are staged as a "candidate" configuration. They are not active until you click <b>Commit</b>.
+> <b>Candidate Config:</b> Green bars indicate changes are staged as a "candidate" configuration. They are not active until you click <b>Commit</b>.
 
 Click on the ntp_check template and click the + button.
 
 <small><img src="../../assets/images/_008.png"></small>
 
-><b>NED (Network Element Driver)</b>: creates de Device Abstraction Layer in NSO. Translating the User intent to the device specific language. (e.g., ASA, IOS, IOSXR, NX, ... ).
+> <b>NED (Network Element Driver)</b>: creates de Device Abstraction Layer in NSO. Translating the User intent to the device specific language. (e.g., ASA, IOS, IOSXR, NX, ... ).
 
 Select the NED: cisco-iosxr-cli-7.65 and click <b>Confirm</b>.
 
@@ -56,4 +56,4 @@ We can see, in green, what is the config we are checking.
 
 <small><img src="../../assets/images/4_91.png"></small>
 
->Note : If we wish to make checks on other types of devices we just need to repeat the same process, by adding a different type of NED.
+> Note: If we wish to make checks on other types of devices we just need to repeat the same process, by adding a different type of NED.

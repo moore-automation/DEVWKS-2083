@@ -46,3 +46,9 @@ htmlcov/
 *.tmp
 *.bak
 *.log
+
+# IDE workspace files
+*.code-workspace
+
+# Credentials (injected at build time via login_macro.py)
+resources/login.yaml

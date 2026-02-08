@@ -121,10 +121,15 @@ plugins:
 # Navigation structure
 nav:
   - Home: index.md
+  - Workshop Guide:
+      - Devices in-sync: workshop_guide/1.md
+      - Creating a Compliance Template: workshop_guide/2.md
+      - Create the Compliance Report ( Auditing ): workshop_guide/3.md
+      - Create a Device Template ( Remediation ): workshop_guide/4.md
+      - Apply the Remediation Template: workshop_guide/5.md
+      - Re-run the Report: workshop_guide/6.md
   - Extra Credit:
       - Deploy the Service: extra_credit/deploy.md
       - Create the Compliance Report: extra_credit/c_report.md
       - Make changes in the Device: extra_credit/changes_device.md
       - Re-run the Report and Remediate: extra_credit/remediate.md
-  - Extra Credit:
-      - Template Examples: extra_credit/index.md

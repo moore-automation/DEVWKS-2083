@@ -1,5 +1,3 @@
-### 2 - Create the Compliance Report 
-
 In this task, we will create a compliance report to validate the service configurations on the devices.
 
 Using the Left Menu <b>"Tools"</b>, Open "Compliance Reports"

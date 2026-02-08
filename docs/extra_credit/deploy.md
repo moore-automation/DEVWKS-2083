@@ -1,5 +1,3 @@
-## Extra Credit  - Compliance using Services
-
 To automate configuration deployment in NSO, you need to develop a service. These services can also support compliance activities. During this task, we will deploy the service on a device.
 
 ### 1 - Deploy the Service

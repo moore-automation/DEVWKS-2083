@@ -1,6 +1,4 @@
 
-### 4 - Re-run the Report and Remediate
-
 This task demonstrates how easily non-compliant reports can be remediated using services. We will now re-run the report, observe the failure, and remediate by re-deploying the service.
 
 Go to <b>Tools</b> -> <b>Compliance reporting</b> and click on <b>...</b> (right side) to Re-Run the report. ( Hit <b>Run</b> )

@@ -1,7 +1,7 @@
 
 ### 3 - Make changes in the device
 
-> We will now delete the changes done by the service in the device.
+We will now manually remove the changes made by the service on the device to generate a non-compliant report.
 
 Navigate to <b>Devices</b> and click on <b>dist-rtr01</b>
 

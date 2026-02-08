@@ -1,59 +1,59 @@
-During this task, we will create a Compliance Template that defines the intended state of your network.
+In this task you will create a Compliance Template that defines the intended state of your network. NSO will later compare the live device configuration against this template to identify deviations.
 
-Open the <b>Configuration Editor</b>.
+Open the **Configuration Editor**.
 
-<small><img src="../../assets/images/_004.png"></small>
+![Configuration Editor](../assets/images/_004.png)
 
-Select the <b>ncs:compliance</b> module.
+Select the **ncs:compliance** module.
 
-<small><img src="../../assets/images/_005.png"></small>
+![ncs:compliance](../assets/images/_005.png)
 
-Click <b>Edit Config</b> (top bar), then click the <b>+ (Plus)</b> button.
+Click **Edit Config** (top bar), then click the **+** button.
 
-<small><img src="../../assets/images/_006.png"></small>
+![Edit Config](../assets/images/_006.png)
 
-Name the template: ntp_check.
+Name the template **ntp_check**.
 
-<small><img src="../../assets/images/_007.png"></small>
+![ntp_check](../assets/images/_007.png)
 
-> <b>Candidate Config:</b> Green bars indicate changes are staged as a "candidate" configuration. They are not active until you click <b>Commit</b>.
+> **Candidate Config:** Green bars indicate changes are staged as a "candidate" configuration. They are not active until you click **Commit**.
 
-Click on the ntp_check template and click the + button.
+Click on the **ntp_check** template and click the **+** button next to the template name.
 
-<small><img src="../../assets/images/_008.png"></small>
+![Add NED](../assets/images/_008.png)
 
-> <b>NED (Network Element Driver)</b>: creates de Device Abstraction Layer in NSO. Translating the User intent to the device specific language. (e.g., ASA, IOS, IOSXR, NX, ... ).
+> **NED (Network Element Driver):** Creates the Device Abstraction Layer in NSO, translating user intent to device-specific syntax (e.g. ASA, IOS, IOS-XR, NX-OS).
 
-Select the NED: cisco-iosxr-cli-7.65 and click <b>Confirm</b>.
+Select the NED **cisco-iosxr-cli-7.65** and click **Confirm**.
 
-<small><img src="../../assets/images/_009.png"></small>
+![Select NED](../assets/images/_009.png)
 
-By clicking on <b>config</b> and then <b>ntp</b>
+Click **config**, then **ntp** to navigate to the NTP path:
 
-Navigate to the NTP path: ncs:compliance/template{ntp_check}/ned-id{cisco-iosxr-cli-7.65}/config/cisco-ios-xr:ntp/
+`ncs:compliance/template{ntp_check}/ned-id{cisco-iosxr-cli-7.65}/config/cisco-ios-xr:ntp/`
 
 Configure the following:
-<b>Max Associations:</b> 10
 
-<small><img src="../../assets/images/_010.png"></small>
+**Max Associations:** 10
 
-<b>Peer Address:</b> 1.1.1.1
+![Max Associations](../assets/images/_010.png)
 
-<small><img src="../../assets/images/4_90.png"></small>
+**Peer Address:** 1.1.1.1
 
-<b>Commit Changes:</b> Click the <b>Launchpad</b> icon (top right) 
+![Peer Address](../assets/images/4_90.png)
 
+Click the **Launchpad** icon (top right) to review your changes.
 
-<small><img src="../../assets/images/_011.png"></small>
+![Launchpad](../assets/images/_011.png)
 
-<b>Config</b> tab 
+Click the **Config** tab to verify the staged configuration.
 
-<small><img src="../../assets/images/_012.png"></small>
+![Config tab](../assets/images/_012.png)
 
-We can see, in green, what is the config we are checking.
+The green highlights show the configuration being checked.
 
-<b>Commit</b> -> <b>Yes, commit</b>.
+Click **Commit**, then **Yes, commit**.
 
-<small><img src="../../assets/images/4_91.png"></small>
+![Commit](../assets/images/4_91.png)
 
-> Note: If we wish to make checks on other types of devices we just need to repeat the same process, by adding a different type of NED.
+> **Note:** To check other device types, repeat this process by adding a different NED.

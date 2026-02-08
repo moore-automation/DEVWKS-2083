@@ -1,26 +1,25 @@
-We will now re-run the report to assess the impact of our remediation efforts and obtain the fully compliant report.
+You will now re-run the compliance report to verify the impact of your remediation and confirm full compliance.
 
-Go to <b>"Tools"</b> -> <b>"Compliance reports"</b>
-Click on the "..." on the right of the screen ( report line ) and then "Run"
+Go to **Tools** -> **Compliance reports**. Click the **...** menu on the right side of the report row and select **Run**.
 
-<small><img src="../../assets/images/4_85.png"></small>
+![Re-run report](../assets/images/4_85.png)
 
-Give it a name, like "ntp_run_2" and hit <b>"Run report"</b>
+Name it **ntp_run_2** and click **Run report**.
 
-<small><img src="../../assets/images/4_86.png"></small>
+![ntp_run_2](../assets/images/4_86.png)
 
-Let's see the "Report Results"
+Navigate to **Report Results**.
 
-<small><img src="../../assets/images/4_87.png"></small>
+![Report Results](../assets/images/4_87.png)
 
-You can see that we're now with <b>"No violation"</b>, which by other words mean "Compliant"
+The report now shows **No violation**, which means all devices are compliant.
 
-<small><img src="../../assets/images/4_88.png"></small>
+![No violation](../assets/images/4_88.png)
 
-Opening the Report we can see that we're <b>full compliant</b>.
+Opening the report confirms you are **fully compliant**.
 
-<small><img src="../../assets/images/4_89.png"></small>
+![Fully compliant](../assets/images/4_89.png)
 
-> There is as well the option to export the reports to <b>PDF</b> (top) formats so they can be leveraged for internal usage.
+> There is also the option to export reports to **PDF** format for internal documentation and auditing purposes.
 
-Thank you so much !
+Congratulations! You have successfully completed the compliance workshop.

@@ -1,69 +1,61 @@
-Now, we will compare the current network state with our ntp_check template to determine whether we are compliant or if further remediation is required.
+Now you will compare the current network state against the **ntp_check** template to determine whether devices are compliant or require remediation.
 
-Go to <b>Tools</b> -> <b>Compliance Reports</b>.
+Go to **Tools** -> **Compliance Reports**.
 
-<small><img src="../../assets/images/_013.png"></small>
+![Compliance Reports](../assets/images/_013.png)
 
-Click <b>+ New report</b>
+Click **+ New report**.
 
-<small><img src="../../assets/images/_014.png"></small>
+![New report](../assets/images/_014.png)
 
-name it ntp_report, and click <b>Create</b>.
+Name it **ntp_report** and click **Create**.
 
-<small><img src="../../assets/images/_015.png"></small>
+![ntp_report](../assets/images/_015.png)
 
-In the <b>Devices</b> tab, select <b>All devices</b>.
+In the **Devices** tab, select **All devices**.
 
-<small><img src="../../assets/images/_016.png"></small>
+![All devices](../assets/images/_016.png)
 
-Scroll to <b>Compliances</b>, click <b>Add Template</b>
+Scroll to **Compliances** and click **Add Template**.
 
-<small><img src="../../assets/images/_017.png"></small>
+![Add Template](../assets/images/_017.png)
 
-Select the "ntp_check" Template we've created.
+Select the **ntp_check** template you created earlier.
 
-<small><img src="../../assets/images/_018.png"></small>
+![Select template](../assets/images/_018.png)
 
-Scroll Up and hit the <b>"Create Report"</b> button. Your page should look like this.
+Scroll up and click **Create Report**. Verify the report name and template are listed correctly.
 
-<small><img src="../../assets/images/_019.png"></small>
+![Create Report](../assets/images/_019.png)
 
-Your Report is ready to run. Click on <b>"Save Report"</b> button.
+Your report is ready to run. Click **Save Report**.
 
-<small><img src="../../assets/images/_020.png"></small>
+![Save Report](../assets/images/_020.png)
 
-Name the run ntp_run and click <b>Run report</b>.
+Name the run **ntp_run** and click **Run report**.
 
-<small><img src="../../assets/images/_021.png"></small>
+![Run report](../assets/images/_021.png)
 
-Click on <b>"Run Report"</b> button.
+Click the **Report results** link in the pop-up, or find it under **Tools -> Report results**.
 
-Click the <b>Report</b> results link in the pop-up or find it under <b>Tools -> Report results</b>.
+![Report results](../assets/images/_022.png)
 
-<small><img src="../../assets/images/_022.png"></small>
+You can see there are some violations. Click on the report execution **ntp_run** to see the details.
 
-Your window should show up like this.
+![Violations](../assets/images/_023.png)
 
-We can notice we've some violations.
+The result shows your network of 9 devices is 78% compliant — only 2 devices are not compliant.
 
-Click on the report execution name "ntp_run" to see the details.
+![78% compliant](../assets/images/_024.png)
 
-<small><img src="../../assets/images/_023.png"></small>
+Click **View details** on a non-compliant device to see exactly what configuration is missing.
 
-Looking at the result, we can see our network of 9 devices is 78% compliant. 
+![View details](../assets/images/_026.png)
 
-Only 2 devices are not compliant.
-
-<small><img src="../../assets/images/_024.png"></small>
-
-Click <b>View details</b> on a "Not Compliant" device to see exactly what configuration is missing.
-
-<small><img src="../../assets/images/_026.png"></small>
-
-> Now, there are 2 ways to Remediate.
+> There are two ways to remediate:
 >
-> 1 - If we're testing the Compliance Report against an NSO Service, we can just click on "Re-Deploy" action button and the Devices will be automatically compliant.
+> 1. If you are testing against an **NSO Service**, you can click the **Re-Deploy** action and devices will automatically become compliant.
 >
-> 2 - Since we're testing the Compliance Report against a Compliance Template, we will create a Device Template and Apply to the Devices.
+> 2. Since you are testing against a **Compliance Template**, you will create a Device Template and apply it to the devices.
 >
-> There is always a third option, which is, inserting the configurations in the device manually, but, we were going the automation path. In this use case, might be just some couple of lines, but following a true compliance check might result in multiple different types of missing configurations across devices.
+> There is always a third option — inserting configurations manually — but the automation path is far more scalable, especially when a compliance check reveals missing configurations across many devices.

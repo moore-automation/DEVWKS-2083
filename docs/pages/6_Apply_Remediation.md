@@ -1,31 +1,29 @@
-We are now applying the template to the non-compliant devices.
+You are now applying the remediation template to the non-compliant devices.
 
-To apply the template, we go to <b>"Devices"</b> menu. 
-Select the devices we want to apply the template.
-Then, <b>"Choose actions"</b> and then <b>"Apply template"</b>
+Navigate to the **Devices** menu. Select the devices you want to apply the template to, then click **Choose actions** and select **Apply template**.
 
-<small><img src="../../assets/images/_030.png"></small>
+![Apply template](../assets/images/_030.png)
 
-We select the template and hit <b>"Apply"</b>
+Select the template and click **Apply**.
 
-<small><img src="../../assets/images/4_82.png"></small>
+![Select and apply](../assets/images/4_82.png)
 
-We should see "result ok" message. Then hit, <b>"Done"</b>
+You should see a **result ok** message. Click **Done**.
 
-<small><img src="../../assets/images/_031.png"></small>
+![Result ok](../assets/images/_031.png)
 
-Taking a look at our <b>launchpad</b> ( top right ). We see that we now have 6 changes pending.
+Check the **Launchpad** (top right) — you should see 6 changes pending.
 
-<small><img src="../../assets/images/4_83.png"></small>
+![Pending changes](../assets/images/4_83.png)
 
-We can see that NSO will automatically apply the changes from the template to the devices.
+NSO will automatically apply the changes from the template to the devices.
 
-> NSO is smart and will only apply the needed changes, for example, if one device already had "max-associations" configured, NSO would skip that lines from the template for that device.
+> NSO is smart and will only apply the needed changes. For example, if a device already had "max-associations" configured, NSO would skip those lines from the template for that device.
 
-<small><img src="../../assets/images/4_84.png"></small>
+![Changes detail](../assets/images/4_84.png)
 
-We now, click on <b>"Commit"</b> and then <b>"Yes, commit"</b>. You should see the message, "Commit finished...rollback id..."
+Click **Commit**, then **Yes, commit**. You should see the message "Commit finished...rollback id..."
 
-This another great advantage of NSO. every change can be reverted, easily.
+This is another great advantage of NSO — every change can be reverted easily.
 
-<small><img src="../../assets/images/_032.png"></small>
+![Commit complete](../assets/images/_032.png)

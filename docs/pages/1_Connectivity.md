@@ -1,10 +1,6 @@
-Connectivity to the lab will be via Cisco Secure Client to an instance specific to your seat number. You can find the below credentials to connect and an example entry below:
+Connect to the lab using Cisco Secure Client. Each seat has a dedicated VPN instance — find your credentials in the table below.
 
-## VPN Connectivity
-
-You can find the credentials to connect to the VPN for your seat below. You will need to use the Cisco Secure Client to connect to the VPN.
-
-The VPN Username is provided in the presentation and the VPN Password is provided in the table below.
+The VPN username is provided in the presentation. The VPN password for your seat is listed here.
 
 ## VPN Credentials
 

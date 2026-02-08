@@ -1,65 +1,65 @@
-To automate configuration deployment in NSO, you need to develop a service. These services can also support compliance activities. During this task, we will deploy the service on a device.
+To automate configuration deployment in NSO, you develop a service. These services can also support compliance activities. In this task you will deploy a pre-built service to a device.
 
-### 1 - Deploy the Service
+### Deploy the Service
 
-Using the Left Menu Click on <b>Services</b> and select the <b>r:router</b> pre-built service.
+In the left menu, click **Services** and select the **r:router** pre-built service.
 
-<small><img src="../../assets/images/5_03.png"></small>
+![Services](../assets/images/5_03.png)
 
-Click on <b>+ Add service</b> located on the right side.
+Click **+ Add service** on the right side.
 
-<small><img src="../../assets/images/5_04.png"></small>
+![Add service](../assets/images/5_04.png)
 
-Then, click on <b>+</b> button to add a new entry to the list
+Click the **+** button to add a new entry to the list.
 
-<small><img src="../../assets/images/5_05.png"></small>
+![New entry](../assets/images/5_05.png)
 
-Name it <b>router_service</b> and hit <b>confirm</b>
+Name it **router_service** and click **Confirm**.
 
-<small><img src="../../assets/images/5_06.png"></small>
+![router_service](../assets/images/5_06.png)
 
-Click on <b>router_service</b> created instance
+Click on the **router_service** instance you just created.
 
-<small><img src="../../assets/images/5_07.png"></small>
+![Select instance](../assets/images/5_07.png)
 
-Click on the <b>+</b> button to select the devices that will be <b>affected</b> by the service creation.
+Click the **+** button to select the devices that will use this service.
 
-<small><img src="../../assets/images/5_08.png"></small>
+![Add device](../assets/images/5_08.png)
 
-Pick <b>dist-rtr01</b> and hit <b>confirm</b>
+Select **dist-rtr01** and click **Confirm**.
 
-<small><img src="../../assets/images/5_09.png"></small>
+![dist-rtr01](../assets/images/5_09.png)
 
-> If you wish to apply the same configuration to other devices repeat the same process and select more devices.
+> To apply the same configuration to additional devices, repeat the process and select more devices.
 
-<small><img src="../../assets/images/5_10.png"></small>
+![Device added](../assets/images/5_10.png)
 
-Click on <b>sys</b> to define the configurations to apply
+Click **sys** to define the configurations to apply.
 
-<small><img src="../../assets/images/5_11.png"></small>
+![sys](../assets/images/5_11.png)
 
-Click on <b>dns</b>
+Click **dns**.
 
-<small><img src="../../assets/images/5_12.png"></small>
+![dns](../assets/images/5_12.png)
 
-Add a ntp <b>server</b> configuration by click on <b>+</b> button
+Add an NTP **server** configuration by clicking the **+** button.
 
-<small><img src="../../assets/images/5_13.png"></small>
+![Add server](../assets/images/5_13.png)
 
-Enter an address like <b>1.2.3.4</b> and hit <b>confirm</b>
+Enter an address like **1.2.3.4** and click **Confirm**.
 
-<small><img src="../../assets/images/5_15.png"></small>
+![Address](../assets/images/5_15.png)
 
-Your page should look like this. You can notice the number 3 near the <b>launchpad</b> ( top right ). click on it.
+You should see the number **3** near the **Launchpad** icon (top right), indicating pending changes. Click on it.
 
-<small><img src="../../assets/images/5_16.png"></small>
+![Launchpad](../assets/images/5_16.png)
 
-If you select the config tab you will be able to see the config difference. What will be sent to the device, and what will be saved on NSO CDB regarding device and service configurations.
+Select the **Config** tab to see the configuration diff — what will be sent to the device and saved in the NSO CDB.
 
-<small><img src="../../assets/images/5_17.png"></small>
+![Config diff](../assets/images/5_17.png)
 
-Hit Commit and then <b>Yes, commit</b>
+Click **Commit**, then **Yes, commit**.
 
-<small><img src="../../assets/images/5_18.png"></small>
+![Commit](../assets/images/5_18.png)
 
-> In case you've selected more devices, the same configuration will be sent to them as well in the same transaction.
+> If you selected multiple devices, the same configuration will be sent to all of them in a single transaction.

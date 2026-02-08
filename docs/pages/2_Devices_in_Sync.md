@@ -1,17 +1,17 @@
-Before performing an audit, NSO must have the latest configuration from the network (the "Source of Truth"). Therefore, during this task, we will execute the "sync-from" action, which pulls the configurations from the devices and saves them in the Configuration Database (CDB).
+Before performing an audit, NSO must have the latest configuration from the network (the "Source of Truth"). In this task you will execute the **sync-from** action, which pulls the configurations from the devices and saves them in the Configuration Database (CDB).
 
-##### Steps:
+### Steps
 
-Navigate to the <b>Devices</b> list in the main menu
+Navigate to the **Devices** list in the main menu.
 
-<small><img src="../../assets/images/_001.png"></small>
+![Devices list](../assets/images/_001.png)
 
-<b>Select all</b> devices.
+**Select all** devices.
 
-<small><img src="../../assets/images/_002.png"></small>
+![Select all](../assets/images/_002.png)
 
-Click the <b>Choose actions</b> dropdown and select <b>Sync From</b>. This pulls the device configurations into the NSO CDB (Configuration Database).
+Click the **Choose actions** dropdown and select **Sync From**. This pulls the device configurations into the NSO CDB (Configuration Database).
 
-<small><img src="../../assets/images/_003.png"></small>
+![Sync From](../assets/images/_003.png)
 
-Once the sync is complete, click <b>Done</b>.
+Once the sync is complete, click **Done**.

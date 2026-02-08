@@ -1,58 +1,52 @@
-This task demonstrates how easily non-compliant reports can be remediated using services. We will now re-run the report, observe the failure, and remediate by re-deploying the service.
+This task demonstrates how easily non-compliant services can be remediated. You will re-run the compliance report, observe the failure, and remediate by re-deploying the service.
 
-Go to <b>Tools</b> -> <b>Compliance reporting</b> and click on <b>...</b> (right side) to Re-Run the report. ( Hit <b>Run</b> )
+Go to **Tools** -> **Compliance Reports** and click the **...** menu (right side) to re-run the report. Click **Run**.
 
-<small><img src="../../assets/images/5_32.png"></small>
+![Re-run report](../assets/images/5_32.png)
 
-name it <b>router_service_report_2</b> and hit <b>Run report</b>
+Name it **router_service_report_2** and click **Run report**.
 
-<small><img src="../../assets/images/5_33.png"></small>
+![router_service_report_2](../assets/images/5_33.png)
 
-We can now see that the report returned with <b>Violations</b>
+The report now shows **Violations**.
 
-<small><img src="../../assets/images/5_34.png"></small>
+![Violations](../assets/images/5_34.png)
 
-Entering the report we can see why the report is not compliant. Service is out-of-sync ( because we deleted the configuration )
+Opening the report reveals why it is not compliant — the service is out-of-sync because the configuration was deleted manually.
 
-<small><img src="../../assets/images/5_35.png"></small>
+![Out of sync](../assets/images/5_35.png)
 
-Clicking on <b>view details</b> you will be able to see what is missing for the service to be in sync.
+Click **View details** to see exactly what is missing for the service to be in sync.
 
-<small><img src="../../assets/images/5_36.png"></small>
+![View details](../assets/images/5_36.png)
 
-> The difference against compliance / device templates comes now, the remediation on services is much faster and simpler.
-> Comes with a cost, limitation on compliance capabilities, being only able to test if configuration is like defined in the service.
+> The key difference with service-based compliance: remediation is much faster and simpler — you just re-deploy the service. The trade-off is that compliance checks are limited to what the service defines.
 
-To Remediate, navigate to <b>Services</b> ( left side ), open the service instance <b>router_service</b> then, click on <b>Choose action</b> and then <b>Re-deploy</b>
+To remediate, navigate to **Services** (left menu), open the **router_service** instance, click **Choose action**, then **Re-deploy**.
 
-<small><img src="../../assets/images/5_37.png"></small>
+![Re-deploy](../assets/images/5_37.png)
 
-> This action will automatically push to the devices the changes missing in order the service to be in-sync
+> This action automatically pushes the missing configuration to the devices so the service is back in sync.
 
-Click <b>Done</b>
+Click **Done**.
 
-<small><img src="../../assets/images/5_38.png"></small>
+![Done](../assets/images/5_38.png)
 
-Let's go back to <b>Compliance Reports</b> and run it one final time
+Navigate back to **Compliance Reports** and run it one final time.
 
-<small><img src="../../assets/images/5_39.png"></small>
+![Final run](../assets/images/5_39.png)
 
-Name it <b>router_service_run_3</b> and hit <b>Run report</b>
+Name it **router_service_run_3** and click **Run report**.
 
-<small><img src="../../assets/images/5_40.png"></small>
+![router_service_run_3](../assets/images/5_40.png)
 
-We can now see that we're now fully <b>Compliant</b>.
+You are now fully **Compliant**.
 
-<small><img src="../../assets/images/5_41.png"></small>
+![Compliant](../assets/images/5_41.png)
 
-<small><img src="../../assets/images/5_42.png"></small>
+![Report detail](../assets/images/5_42.png)
 
-Thank you so much !
-
-This guide can be re-done anytime. You can access the lab instance in https://devnetsandbox.cisco.com/DevNet
-
-In the search, you type "nso" and then choose <b>Network Services Orchestrator 6.4.4</b>
-
+Thank you for completing the workshop! This guide can be revisited anytime using the [DevNet Sandbox](https://devnetsandbox.cisco.com/DevNet) — search for **Network Services Orchestrator 6.4.4**.
 
 <div style="text-align: center; color: #888; font-size: 0.9em; margin-top: 3em;">
   Built with love by Cisco CX Automation Team | Cisco Live 2026

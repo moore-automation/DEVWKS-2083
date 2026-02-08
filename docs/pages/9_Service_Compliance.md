@@ -1,41 +1,41 @@
-In this task, we will create a compliance report to validate the service configurations on the devices.
+In this task you will create a compliance report to validate the service configurations on the devices. Unlike template-based compliance, service compliance checks whether the device state matches the service definition.
 
-Using the Left Menu <b>"Tools"</b>, Open "Compliance Reports"
+In the left menu, go to **Tools** and open **Compliance Reports**.
 
-<small><img src="../../assets/images/5_01.png"></small>
+![Compliance Reports](../assets/images/5_01.png)
 
-Click on <b>+New Report</b> button and name it <b>router_service_report</b>. Hit the Create Button.
+Click **+New Report** and name it **router_service_report**. Click **Create**.
 
-<small><img src="../../assets/images/5_02.png"></small>
+![New report](../assets/images/5_02.png)
 
-Go to the <b>Services</b> tab. Select <b>Some services</b> and then <b>r:router</b> service type.
+Go to the **Services** tab. Select **Some services**, then choose the **r:router** service type.
 
-<small><img src="../../assets/images/5_19.png"></small>
+![Select service](../assets/images/5_19.png)
 
-<b>Add to list</b>
+Click **Add to list**.
 
-<small><img src="../../assets/images/5_20.png"></small>
+![Add to list](../assets/images/5_20.png)
 
-Now, <b>Create Report</b> ( top right )
+Click **Create Report** (top right).
 
-<small><img src="../../assets/images/5_21.png"></small>
+![Create Report](../assets/images/5_21.png)
 
-After <b>Saved changes successfully</b>, "Run report"
+After you see **Saved changes successfully**, click **Run report**.
 
-<small><img src="../../assets/images/5_22.png"></small>
+![Run report](../assets/images/5_22.png)
 
-Name it <b>router_Service_run</b> and hit <b>Run report</b>
+Name it **router_service_run** and click **Run report**.
 
-<small><img src="../../assets/images/5_23.png"></small>
+![router_service_run](../assets/images/5_23.png)
 
-Report results
+Navigate to **Report results**.
 
-<small><img src="../../assets/images/5_24.png"></small>
+![Report results](../assets/images/5_24.png)
 
-We can see our Report is compliant, due to no changes in the device after the service application. 
+The report is compliant because no changes were made on the device after the service was applied.
 
-<small><img src="../../assets/images/5_25.png"></small>
+![Compliant](../assets/images/5_25.png)
 
-Opening the report you can see the results.
+Opening the report shows the detailed results.
 
-<small><img src="../../assets/images/5_26.png"></small>
+![Report details](../assets/images/5_26.png)

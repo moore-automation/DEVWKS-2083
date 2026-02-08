@@ -2,7 +2,18 @@
 
 {% block extrahead %}
 {{ super() }}
-{% if not page or not page.is_homepage %}
+{% if page and page.is_homepage %}
+<style>
+  /* Hide both sidebars and go full-width on the homepage */
+  .md-sidebar--primary,
+  .md-sidebar--secondary { display: none !important; }
+  @media screen and (min-width: 76.25em) {
+    .md-main__inner {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+  }
+</style>
+{% elif not page or not page.is_homepage %}
 <style>
   /* Hide ToC sidebar and expand content on non-homepage pages */
   .md-sidebar--secondary { display: none !important; }

@@ -1,23 +1,21 @@
-We will now manually remove the changes made by the service on the device to generate a non-compliant report.
+To demonstrate how service compliance detects configuration drift, you will manually remove the changes made by the service on a device. This will generate a non-compliant report in the next step.
 
-Navigate to <b>Devices</b> and click on <b>dist-rtr01</b>
+Navigate to **Devices** and click on **dist-rtr01**.
 
-<small><img src="../../assets/images/5_27.png"></small>
+![dist-rtr01](../assets/images/5_27.png)
 
-Navigate to the DNS configuration
+Navigate to the DNS configuration: **config** -> **ip** -> **name-server**.
 
-<b>config</b> -> <b>ip</b> -> <b>name-server</b>
+![DNS config](../assets/images/5_28.png)
 
-<small><img src="../../assets/images/5_28.png"></small>
+Click **Edit config**, select the server address, and click the **-** button to remove it.
 
-Click on <b>Edit config</b>, select the server address and hit <b>-</b> button
+![Remove server](../assets/images/5_29.png)
 
-<small><img src="../../assets/images/5_29.png"></small>
+You should see 2 changes pending in the Launchpad.
 
-You should see 2 changes pending
+![Pending changes](../assets/images/5_30.png)
 
-<small><img src="../../assets/images/5_30.png"></small>
+The config diff shows you are deleting the service configuration manually. Click **Commit**, then **Yes, commit**.
 
-We can notice the config diff. We're deleting the service config manually. Hit <b>Commit</b> and then <b>Yes, commit</b>
-
-<small><img src="../../assets/images/5_31.png"></small>
+![Commit](../assets/images/5_31.png)

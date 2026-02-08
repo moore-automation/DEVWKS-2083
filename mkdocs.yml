@@ -122,9 +122,9 @@ plugins:
 nav:
   - Home: index.md
   - Extra Credit:
-      - Deploy the Service: workshop-guide/deploy.md
-      - Create the Compliance Report: workshop-guide/c_report.md
-      - Make changes in the Device: workshop-guide/changes_device.md
-      - Re-run the Report and Remediate: workshop-guide/remediate.md
+      - Deploy the Service: extra_credit/deploy.md
+      - Create the Compliance Report: extra_credit/c_report.md
+      - Make changes in the Device: extra_credit/changes_device.md
+      - Re-run the Report and Remediate: extra_credit/remediate.md
   - Extra Credit:
       - Template Examples: extra_credit/index.md

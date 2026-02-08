@@ -80,8 +80,8 @@ markdown_extensions:
   - footnotes
   - md_in_html
   - toc:
-      permalink: true
-      toc_depth: 3
+      permalink: false
+      toc_depth: 0
   
   # Python Markdown Extensions
   - pymdownx.arithmatex:
@@ -121,16 +121,10 @@ plugins:
 # Navigation structure
 nav:
   - Home: index.md
-  - Introduction:
-      - Overview: introduction/overview.md
-      - Compliance Patterns: introduction/compliance-patterns.md
-  - Lab Guide:
-      - Setup: lab-guide/setup.md
-      - Getting Started: lab-guide/getting-started.md
-      - Building Compliance Templates: lab-guide/compliance-templates.md
-      - Generating Compliance Reports: lab-guide/compliance-reports.md
-      - Remediation: lab-guide/remediation.md
-      - Advanced Topics: lab-guide/advanced.md
-  - Reference:
-      - Template Examples: reference/template-examples.md
-      - Template Library: reference/template-library.md
+  - Extra Credit:
+      - Deploy the Service: workshop-guide/deploy.md
+      - Create the Compliance Report: workshop-guide/c_report.md
+      - Make changes in the Device: workshop-guide/changes_device.md
+      - Re-run the Report and Remediate: workshop-guide/remediate.md
+  - Extra Credit:
+      - Template Examples: extra_credit/index.md

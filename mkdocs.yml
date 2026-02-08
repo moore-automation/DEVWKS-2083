@@ -120,7 +120,9 @@ plugins:
 
 # Navigation structure
 nav:
-  - Home: index.md
+  - Getting Started: 
+      - Credentials: index.md
+      - Lab Guide: lab.md
   - Workshop Guide:
       - Devices in-sync: workshop_guide/1.md
       - Creating a Compliance Template: workshop_guide/2.md

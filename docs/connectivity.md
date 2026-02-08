@@ -110,14 +110,15 @@ function copyToClipboard(btn) {
   const text = btn.textContent;
   navigator.clipboard.writeText(text);
   btn.textContent = "Copied!";
-  setTimeout(() => btn.textContent = btn.getAttribute('data-original'), 1000);
+  //setTimeout(() => btn.textContent = btn.getAttribute('data-original'), 1000);
 }
 // Store original text for each button
+/*
 window.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.copy-btn').forEach(btn => {
     btn.setAttribute('data-original', btn.textContent);
   });
-});
+});*/
 </script>
 
 <style>

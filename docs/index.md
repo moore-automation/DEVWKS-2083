@@ -13,6 +13,7 @@ ___
 ###### Before you begin:
 
 <b>VPN:</b> Ensure your Cisco VPN connection is active.
+
 <b>Web UI:</b> <a target="_blank" href="http://10.10.20.47:8080/">NSO Development</a>
 
 ###### Credentials:

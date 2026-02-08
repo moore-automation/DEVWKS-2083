@@ -34,60 +34,6 @@ The match type category determines any required conditions for a given configura
 2. variable substitution
 3. regular expression match
 
-### Match Logic
-
-The match logic category determines how a given configuration is evaluated. This has template implications as features may need to be present, absent, present but disabled, absent but enabled, or evaluated (ie count).
-
-1. enabled feature
-2. disabled feature
-3. absent configuration
-4. comparison operations (ex. 2 or more ntp servers)
-
-### Match Pattern
-
-The match pattern category determines the scope of a given configuration match. This has template implications as configuration elements may be nested, may require matching multiple lines, or may require iterating through a list of values.
-
-1. global configuration
-2. nested configuration
-3. configuration list
-4. configuration section (multiple lines)
-
-## Getting Started
-
-### Option 1: Using Make (Recommended)
-
-```bash
-# Clone the repository
-git clone https://github.com/moore-automation/DEVWKS-2083.git
-cd DEVWKS-2083
-
-# Install dependencies
-make install
-
-# Start the development server
-make serve
-
-# Open your browser to http://localhost:8000
-```
-
-### Option 2: Manual Setup
-
-```bash
-# Clone the repository
-git clone https://github.com/moore-automation/DEVWKS-2083.git
-cd DEVWKS-2083
-
-# Create virtual environment
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Start MkDocs server
-mkdocs serve
-```
-
 ## Makefile Commands
 
 | Command | Description |

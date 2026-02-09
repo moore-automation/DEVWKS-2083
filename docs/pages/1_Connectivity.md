@@ -1,46 +1,32 @@
-Connect to the lab using Cisco Secure Client. Each seat has a dedicated VPN instance — find your credentials in the table below.
+Connect to the lab using the VPNless link for your seat. No VPN client is required — simply click your seat's link below to open the NSO sandbox login page.
 
-The VPN username is provided in the presentation. The VPN password for your seat is listed here.
-
-## VPN Credentials
+## Lab Access (VPNless Links)
 
 <table>
 <thead>
 <tr>
-<th>Seat</th>
-<th>VPN Address</th>
-<th>VPN Password</th>
+<th>Seat 1–4</th>
+<th>Seat 5–8</th>
+<th>Seat 9–12</th>
+<th>Seat 13–16</th>
 </tr>
 </thead>
 <tbody>
-{% for seat in seats %}
+{% for seat in seats[:4] %}
 <tr>
-<td>seat {{ seat.num }}</td>
-<td><button class="copy-btn" onclick="copyToClipboard(this)">{{ seat.vpn_address }}</button></td>
-<td><button class="copy-btn" onclick="copyToClipboard(this)">{{ seat.vpn_password }}</button></td>
+<td><a href="{{ seat.vpnless_url }}" target="_blank" rel="noopener noreferrer" class="lab-link">seat {{ seat.num }} — Open Lab ↗</a></td>
+<td>{% if seats[loop.index0 + 4] %}<a href="{{ seats[loop.index0 + 4].vpnless_url }}" target="_blank" rel="noopener noreferrer" class="lab-link">seat {{ seats[loop.index0 + 4].num }} — Open Lab ↗</a>{% endif %}</td>
+<td>{% if seats[loop.index0 + 8] %}<a href="{{ seats[loop.index0 + 8].vpnless_url }}" target="_blank" rel="noopener noreferrer" class="lab-link">seat {{ seats[loop.index0 + 8].num }} — Open Lab ↗</a>{% endif %}</td>
+<td>{% if seats[loop.index0 + 12] %}<a href="{{ seats[loop.index0 + 12].vpnless_url }}" target="_blank" rel="noopener noreferrer" class="lab-link">seat {{ seats[loop.index0 + 12].num }} — Open Lab ↗</a>{% endif %}</td>
 </tr>
 {% endfor %}
 </tbody>
 </table>
 
-<script>
-function copyToClipboard(btn) {
-  const text = btn.textContent;
-  navigator.clipboard.writeText(text);
-  btn.textContent = "Copied!";
-}
-</script>
-
 <style>
-.copy-btn {
-  font-size: 0.95em;
-  margin-left: 0;
-  cursor: pointer;
-  background: none;
-  border: none;
+.lab-link {
   color: #0078d4;
-  text-decoration: underline;
-  padding: 0;
+  font-weight: 500;
 }
 td {
   position: relative;

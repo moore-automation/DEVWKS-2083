@@ -38,12 +38,15 @@ def define_env(env):
                 # Extract seat number from e.g. "devwks-2083-ws2-seat12"
                 match = re.search(r"seat(\d+)$", name)
                 seat_num = int(match.group(1)) if match else 0
+                # VPNless URL per seat: https://nso.2083_seat{N}.devnetvpnless.dev/login.html?pkgs=&next=/
+                vpnless_url = f"https://nso.2083_seat{seat_num}.devnetvpnless.dev/login.html?pkgs=&next=/"
                 seats.append(
                     {
                         "num": seat_num,
                         "name": name,
                         "vpn_address": info.get("vpn_address", ""),
                         "vpn_password": info.get("vpn_password", ""),
+                        "vpnless_url": vpnless_url,
                     }
                 )
             elif "-speaker" in name:

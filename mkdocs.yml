@@ -125,7 +125,7 @@ plugins:
 nav:
   - Home: index.md
   - Workshop Guide:
-    - VPN Connectivity: pages/1_Connectivity.md
+    - Lab Access: pages/1_Connectivity.md
     - Devices in-sync: pages/2_Devices_in_Sync.md
     - Creating a Compliance Template: pages/3_Compliance_Template.md
     - Create the Compliance Report: pages/4_Compliance_Report.md
